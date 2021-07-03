@@ -1,13 +1,13 @@
-## BOMBSQUAD-SERVER
+# BOMBSQUAD-SERVER
 
 **The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features. I focused on must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 
-### Pre-procedure
+## Pre-procedure
 
 - Python3.8
 - Pip3
 
-### Some Features
+## Some Features
 
 - All Config Files and Stats can Auto Backup to the Repo
 - Pro Key to Activate Extra Awesome Features
@@ -18,21 +18,29 @@
 - Administration System with Custom Time Periods
 - And Obviously a Prefix System
 
-### Updating Procedure
+## Updating Procedure
 
 **Simply run the command in terminal while in the Scripts directory**
 
-```python
+```bash
 cd dist/ba_root/mods && python3 update.py
 ```
 **Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
 
-### Common Problems
+## Common Problems
 
-1. Server stuck in the first run ? ---> **Make sure you have internet connection and installed packages from pre-procedure**
+1. Server stuck in the first run ? 
+- **Make sure you have internet connection and installed packages from pre-procedure**
 
-2. Giving error about pip ? ---> **Make sure you install pip**
+2. Giving error about pip ? 
+- **Make sure you install pip**
 
-### Have A Question ?
+3. Giving error about 'ujson' or 'arrow' ?
+- **Run following commands in terminal**
+```bash
+pip3 install ujson arrow
+```
+
+## Have A Question ?
 
 **Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
