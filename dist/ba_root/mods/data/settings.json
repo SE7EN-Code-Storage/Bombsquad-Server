@@ -1,0 +1,39 @@
+{
+    "abuse_check": true,
+    "beg_check": false,
+    "chat_log": true,
+    "snowfall": true,
+    "log_toppers": true,
+    "spam_time": 1,
+    "nightmode": {
+        "status": true,
+        "start": 19,
+        "end": 7
+    },
+    "registration": false,
+    "spam_protection": true,
+    "timezone": "Asia/Kolkata",
+    "include_roles": [
+        "owners",
+        "moderators",
+        "admins"
+    ],
+    "texts": [
+        "Heartly Welcome To the Server",
+        "I hope for your good stay here"
+    ],
+    "backup_service": {
+        "period": "weekly",
+        "files": [
+            "stats",
+            "roles"
+        ]
+    },
+    "cooldown": {
+        "promote": 200,
+        "/stats": 100,
+        "/find": 500,
+        "/redeem": 200,
+        "/info": 50
+    }
+}

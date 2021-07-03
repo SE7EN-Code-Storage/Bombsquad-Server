@@ -1,0 +1,684 @@
+{
+    "configs": {
+        "help": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "kick": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "info": {
+            "alias": [
+                "list"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "stats": {
+            "alias": [
+                "me"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "shop": {
+            "alias": [
+                "store"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "removetag": {
+            "alias": [
+                "rt"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "purge": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "donate": {
+            "alias": [
+                "give"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "buy": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "inventory": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "find": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "take": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "convert": {
+            "alias": [
+                "change"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "ban": {
+            "alias": [
+                "fuck"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "elite": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "admin": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "moderator": {
+            "alias": [],
+            "role": "owners",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "owner": {
+            "alias": [],
+            "role": "owners",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "rolelist": {
+            "alias": [
+                "rl"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "settings": {
+            "alias": [
+                "edit"
+            ],
+            "role": "owners",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "whois": {
+            "alias": [
+                "gp"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "restart": {
+            "alias": [
+                "quit"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "report": {
+            "alias": [
+                "log"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "end": {
+            "alias": [
+                "finish"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "warn": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "mute": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "announce": {
+            "alias": [
+                "broadcast"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "ip": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "register": {
+            "alias": [],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "redeem": {
+            "alias": [
+                "hack"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "resetcodes": {
+            "alias": [
+                "rc"
+            ],
+            "role": "owners",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "addcodes": {
+            "alias": [],
+            "role": "moderators",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "skin": {
+            "alias": [
+                "char",
+                "character"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "gloves": {
+            "alias": [],
+            "role": "owners",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "camera": {
+            "alias": [
+                "rotate"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "flymode": {
+            "alias": [
+                "fm"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "playsound": {
+            "alias": [
+                "ps"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "rainbow": {
+            "alias": [
+                "rb"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "nightmode": {
+            "alias": [
+                "nv"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "getprofile": {
+            "alias": [
+                "gp"
+            ],
+            "role": "toppers",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "box": {
+            "alias": [],
+            "role": "toppers",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "heal": {
+            "alias": [
+                "health"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "curse": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "fly": {
+            "alias": [
+                "fm"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "invisible": {
+            "alias": [
+                "inv"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "headless": {
+            "alias": [
+                "hl"
+            ],
+            "role": "toppers",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "remove": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "superpunch": {
+            "alias": [
+                "super-punch",
+                "sp"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "godmode": {
+            "alias": [
+                "gm"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "shield": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "kill": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "freeze": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "unfreeze": {
+            "alias": [
+                "uf"
+            ],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "knock": {
+            "alias": [
+                "sleep"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "pause": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "slowmotion": {
+            "alias": [
+                "slow-motion",
+                "sm"
+            ],
+            "role": "toppers",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "hug": {
+            "alias": [],
+            "role": "elites",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1,
+                    2
+                ]
+            }
+        },
+        "tint": {
+            "alias": [],
+            "role": "elites",
+            "arguments": {
+                "min": 3,
+                "integer": null
+            }
+        },
+        "icyfloor": {
+            "alias": [
+                "if"
+            ],
+            "role": "elites",
+            "arguments": {
+                "min": 0,
+                "integer": null
+            }
+        },
+        "shatter": {
+            "alias": [],
+            "role": "admins",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    2
+                ]
+            }
+        },
+        "whitelist": {
+            "alias": [
+                "wl"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "maxplayers": {
+            "alias": [
+                "maxplayer",
+                "mp"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
+        "partytype": {
+            "alias": [
+                "pt"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        },
+        "partyname": {
+            "alias": [
+                "pn"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": null
+            }
+        }
+    },
+    "help": {
+        "convert": "Command to convert score into tickets\nUsage: /convert <ammount_of_score>(required)",
+        "admin": "Command to add any player in the admins's list\nUsage: /admins <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(optional)",
+        "ban": "Command to ban any player on the server\nUsage: /ban <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(required) <reason>(optional)",
+        "buy": "Command to buy items/effects on the server\nUsage: /buy <item/effect>(required)",
+        "restart": "Command to restart server\nUsage: /restart",
+        "end": "Command to end current game\nUsage: /end",
+        "announce": "Command to announce screenmessage on server\nUsage: /announce <message>(required)",
+        "ip": "help string for ip",
+        "resetcodes": "Command to reset all codes, and make them usable again\nUsage: /rc <no_of_codes>(optional)",
+        "donate": "Command to donate tickets to other players\nUsage: /donate <ammount>(required) <client_id>(required) <reason>(optional)",
+        "elite": "Command to add any player in the elites's list\nUsage: /elites <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(optional)",
+        "find": "Command to find tickets\nUsage: /find",
+        "info": "Command to get info of any/every player on the server\nUsage: /info <playername>(optional)",
+        "inventory": "Command to get items in inventory\nUsage: /inventory <client_id>(optional)",
+        "kick": "Command to kick any player on the server\nUsage: /kick <client id>(required) <ban time hours>(optional)",
+        "moderator": "Command to add any player in the moderators's list\nUsage: /moderators <client_id>(required)",
+        "mute": "Command to mute players or whole server\nUsage: /mute <clientid>(required) <reason>(optional)",
+        "owner": "Command to add any player in the owners's list\nUsage: /owners <client_id>(required)",
+        "purge": "Command to purge items or effects listed in shop system\nUsage: /purge <effects/items>(required)",
+        "redeem": "Command to redeem codes for tickets\nUsage: /redeem <code>(required)",
+        "register": "Command to register for tournaments\nUsage: /register <Discord-ID>(optional)",
+        "removetag": "Command to remove tag of a player > forcefully\nUsage: /removetag <client_id>(required)",
+        "report": "Command to report player\nUsage: /report <client_id>(required) <reason>(required)",
+        "rolelist": "Command to see role's list\nUsage: /rl <role>(required)",
+        "settings": "Command to edit settings from commands\nUsage: /settings <key>(required) <value>(required)",
+        "shop": "Command to get items or effects listed in shop system\nUsage: /shop <effects/items>(required)",
+        "skin": "Command to get modded skins on the server\nUsage: /skin <name>(required)",
+        "stats": "Command to get stats of a player on the server\nUsage: /stats <client_id>(optional)",
+        "take": "Command to take tickets of other players forcefully\nUsage: /take <ammount>(required) <client_id>(required) <reason>(optional)",
+        "warn": "Command to warn players\nUsage: /warn <clientid>(required) <reason>(optional)",
+        "whois": "Command to get stats from rank of a player\nUsage: /whois <rank>(required)",
+        "addcodes": "Command to add new redeemable codes to files\nUsage: /addcodes <count>(optional)",
+        "help": "Supported Commands\nUse '/help <command-name>' for more info",
+        "gloves": "Command to get gloves in our hand\nUsage: /gloves <player_id/all>(optional)",
+        "camera": "Command to rotate camera\nUsage: /camera",
+        "flymode": "Command to get to the usage of flymode\nUsage: /flymode",
+        "playsound": "Command to play sound\nUsage: /playsound <file_name>(required)",
+        "rainbow": "Command to be a rainbow guy\nUsage: /rainbow <all/player_id>(optional)",
+        "nightmode": "Command to on nightmode\nUsage: /nightmode",
+        "getprofile": "Command to get profiles of a player\nUsage: /getprofile <player_id>(required)",
+        "box": "Command to become boxes\nUsage: /box <all/player_id>(required)",
+        "heal": "Command to get healed\nUsage: /heal <all/player_id>(optional)"
+    }
+}

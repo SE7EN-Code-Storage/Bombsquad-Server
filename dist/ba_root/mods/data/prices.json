@@ -1,0 +1,67 @@
+{
+    "items": {
+        "impact": {
+            "cost": 20,
+            "details": "Default Bombtype - IMPACT"
+        },
+        "sticky": {
+            "cost": 20,
+            "details": "Default Bombtype - STICKY"
+        },
+        "rainbow_c": {
+            "cost": 20,
+            "details": "Change Colors Faster Than A Chameleon!"
+        },
+        "rainbow_h": {
+            "cost": 20,
+            "details": "Change Highlight Faster Than A Chameleon!"
+        },
+        "tag": {
+            "cost": 0,
+            "details": "A Custom Tag!"
+        },
+        "randomiser": {
+            "cost": 30,
+            "details": "Changes Charater in Every Fu*king Round"
+        },
+        "backflip": {
+            "cost": 40,
+            "details": "Enables BackFlip"
+        },
+        "flymode": {
+            "cost": 30,
+            "details": "Fly Like a SuperHero"
+        },
+        "onepunchman": {
+            "cost": 30,
+            "details": "Changes Charater ability into onePunchMan"
+        },
+        "iceman": {
+            "cost": 40,
+            "details": "Subzero's Ability"
+        },
+        "invisible": {
+            "cost": 30,
+            "details": "You can't see me"
+        }
+    },
+    "effects": {
+        "sparks": {
+            "cost": 25,
+            "details": "Emits Sparks"
+        },
+        "ice": {
+            "cost": 25,
+            "details": "Emits Ice"
+        },
+        "splinter": {
+            "cost": 20,
+            "details": "Emits Splinters"
+        },
+        "sweat": {
+            "cost": 20,
+            "details": "Emits Sweat"
+        }
+    },
+    "custom": {}
+}
