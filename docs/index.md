@@ -1,6 +1,8 @@
 # BOMBSQUAD-SERVER
 
-**The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features. I focused on must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
+- **The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features**
+- **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
+- **Mods are compiled against 'C' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
 
 ## Pre-procedure
 
@@ -38,7 +40,7 @@ cd dist/ba_root/mods && python3 update.py
 - **Make sure you install pip**
 
 3. Giving error about 'ujson' or 'arrow' ?
-- **Run following commands in terminal**
+- **Run following command in terminal**
 ```bash
 pip3 install ujson arrow
 ```
