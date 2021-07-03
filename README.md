@@ -2,6 +2,11 @@
 
 **The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features. I focused on must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 
+### Pre-procedure
+
+- Python3.8
+- Pip3
+
 ### Some Features
 
 - All Config Files and Stats can Auto Backup to the Repo
@@ -21,6 +26,14 @@
 cd dist/ba_root/mods && python3 update.py
 ```
 **Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
+
+### Common Problems
+
+1. Server stuck in the first run !
+Ans. Make sure you have internet connection and installed packages from pre-procedure
+
+2. Giving error about pip !
+Ans Make sure you install pip
 
 ### Have A Question ?
 
