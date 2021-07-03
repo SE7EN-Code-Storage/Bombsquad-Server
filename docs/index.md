@@ -16,6 +16,8 @@
 - Introduced League System Based on overall Stats, Obviously cusomisable
 - Exterior Written Mods so that We can Update Base Server Files Easily
 - Administration System with Custom Time Periods
+- Use `/help` in chat to get usage and use of builtin commands
+- Custom perks and commands registration with ease (i will write a whole page about this in wiki pages)
 - And Obviously a Prefix System
 
 ## Updating Procedure
