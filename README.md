@@ -29,11 +29,9 @@ cd dist/ba_root/mods && python3 update.py
 
 ### Common Problems
 
-1. Server stuck in the first run !
-Ans. Make sure you have internet connection and installed packages from pre-procedure
+1. Server stuck in the first run ? ---> **Make sure you have internet connection and installed packages from pre-procedure**
 
-2. Giving error about pip !
-Ans Make sure you install pip
+2. Giving error about pip ? ---> **Make sure you install pip**
 
 ### Have A Question ?
 
