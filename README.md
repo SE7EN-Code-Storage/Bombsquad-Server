@@ -1,6 +1,6 @@
 ## BOMBSQUAD-SERVER
 
-**The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features. I focused on mus have features rather than grafical mods (which you can easily get tons of mods on the internet)**
+**The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features. I focused on must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 
 ### Some Features
 
