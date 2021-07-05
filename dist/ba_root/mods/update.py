@@ -195,7 +195,9 @@ if __name__ == "__main__":
             # Keep our animation alive, until our main process is alive
             while update_process.is_alive():
                 animated_loading()
-            print("\n")
+
+            # Delete Loading animation and print finals
+            sys.stdout.flush()
             print(
                 "\033[01;33m Update Complete, Start the server to see changes ! \033[00m"
             )
