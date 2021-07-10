@@ -2,7 +2,7 @@
 
 - **The Modded Server for The Game Called BOMBSQUAD with UnderTheHood Features**
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
-- **Mods are compiled against 'C' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
+- **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
 
 ## Pre-procedure
 
