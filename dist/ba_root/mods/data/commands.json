@@ -563,6 +563,18 @@
                 ]
             }
         },
+        "tag": {
+            "alias": [
+                "custom"
+            ],
+            "role": "moderators",
+            "arguments": {
+                "min": 1,
+                "integer": [
+                    1
+                ]
+            }
+        },
         "tint": {
             "alias": [],
             "role": "elites",
@@ -665,7 +677,7 @@
         "rolelist": "Command to see role's list\nUsage: /rl <role>(required)",
         "settings": "Command to edit settings from commands\nUsage: /settings <key>(required) <value>(required)",
         "shop": "Command to get items or effects listed in shop system\nUsage: /shop <effects/items>(required)",
-        "skin": "Command to get modded skins on the server\nUsage: /skin <name>(required)",
+        "skin": "Command to get modded skins on the server\nUsage: /skin <name>(required) or <reset>(optional)",
         "stats": "Command to get stats of a player on the server\nUsage: /stats <client_id>(optional)",
         "take": "Command to take tickets of other players forcefully\nUsage: /take <ammount>(required) <client_id>(required) <reason>(optional)",
         "warn": "Command to warn players\nUsage: /warn <clientid>(required) <reason>(optional)",
@@ -701,6 +713,7 @@
         "whitelist": "Command to add/remove player to/from players\nUsage: /whitelist <client_id>(required) <r>(optional)",
         "maxplayers": "Command to increase max players\nUsage: /maxplayers <count>(required)",
         "partytype": "Command to change partytype\nUsage: /partytype <public/private>(optional)",
-        "partyname": "Command to change partyname\nUsage: /partyname <name>(required)"
+        "partyname": "Command to change partyname\nUsage: /partyname <name>(required)",
+        "tag": "Command to add/remove tag\nUsage: /tag <client_id>(required) <tag>(required)"
     }
 }
