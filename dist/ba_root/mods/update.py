@@ -12,7 +12,10 @@ import requests
 import threading
 import urllib.request
 from pathlib import Path
-from subprocess import Popen, PIPE
+from subprocess import Popen, PIPE, call
+
+# Versioning
+VERSION = 1.0
 
 # Extending python path for data folder
 sys.path.append(str(Path(Path(__file__).parent, "data")))
@@ -39,12 +42,17 @@ FILES = {
 }
 
 
-def execute(cmd):
+def execute(cmd, _call=False):
     """Function for running command line bash commands
 
     Args:
        cmd ([str]): string for command
+       _call
     """
+    if _call:
+        process = call(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+        return True
+
     process = Popen(["sh", "-c", cmd], stdout=PIPE, stderr=PIPE)
     error_code = process.wait()
     if error_code:
@@ -52,11 +60,11 @@ def execute(cmd):
     return False if error_code else True
 
 
-def animated_loading():
+def animated_loading(string):
     """Function for simple loading animation"""
     chars = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
     for char in chars:
-        sys.stdout.write(f"\r \033[01;33m     Updating...  {char}     \033[00m")
+        sys.stdout.write(string.format(char))
         time.sleep(0.1)
         sys.stdout.flush()
 
@@ -90,7 +98,7 @@ def online_data(file):
     """
     return json.loads(
         urllib.request.urlopen(
-            f"https://raw.githubusercontent.com/LIRIK-SPENCER/server-update/main/json/{file}.json"
+            f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
         )
         .read()
         .decode()
@@ -101,7 +109,7 @@ def get_repo_contents():
     """Function for getting file names of github repo"""
 
     response = requests.get(
-        f"https://api.github.com/repos/LIRIK-SPENCER/server-update/contents/json/",
+        f"https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/",
         headers={"Accept": "application/vnd.github.v3+json"},
     )
     return [i["name"] for i in response.json() if i["type"] != "dir"]
@@ -123,7 +131,7 @@ def do_update():
     updating server on the fly
     """
 
-    print("\033[01;33m Updating Your Server On the Fly... \033[00m")
+    print(f"\033[01;33m Starting Server Update Version {VERSION}... \033[00m")
 
     # In case if i miss something to update just add it to here
     # as an online updating program, mainly this will be "pass"
@@ -138,7 +146,7 @@ def do_update():
     # Start out update
     for file_name, nested_bool in FILES.items():
         update_json(file_name, nested_bool)
-
+        
     update_server()
 
 
@@ -148,10 +156,8 @@ def update_server():
     """
 
     execute("rm -rf world")
-    execute("git clone https://github.com/LIRIK-SPENCER/server-update")
-    execute("cd server-update && rm -rf json && rm -rf .git")
-    execute("mv server-update world")
-
+    execute("chmod +x ./fetch")
+    execute('./fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world', _call=True)
     update_version()
 
 
@@ -189,17 +195,14 @@ if __name__ == "__main__":
     if not latest_build():
         try:
             # Start our main function with a thread, to get track of it
-            update_process = threading.Thread(name="update_process", target=do_update)
+            update_process = threading.Thread(target=do_update)
             update_process.start()
 
             # Keep our animation alive, until our main process is alive
             while update_process.is_alive():
-                animated_loading()
-
-            # Delete Loading animation and print finals
-            sys.stdout.flush()
+                animated_loading("\r \033[01;33m     Updating Server...  {}     \033[00m")
             print(
-                "\033[01;33m Update Complete, Start the server to see changes ! \033[00m"
+                "\n\033[01;33m Update Complete, Start the server to see changes ! \033[00m"
             )
         except Exception as error:
             print("Following error occurred while updating: ", error)
