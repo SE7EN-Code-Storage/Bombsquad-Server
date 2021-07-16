@@ -42,165 +42,161 @@ FILES = {
 }
 
 
-def execute(cmd, _call=False):
-    """Function for running command line bash commands
+class UpdateServer(object):
+    """Main Class For Server Update"""
 
-    Args:
-       cmd ([str]): string for command
-       _call
-    """
-    if _call:
-        process = call(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+    def __init__(self) -> None:
+        self.latest = True
+
+        if self.get_file("version")["version"] < self.online_data("version")["version"]:
+            self.latest = False
+
+    def execute(self, cmd: str, _call: bool = False) -> bool:
+        """Function for running command line bash commands
+
+        Args:
+        cmd ([str]): string for command
+        _call
+        """
+        if _call:
+            process = call(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+            return True
+
+        process = Popen(["sh", "-c", cmd], stdout=PIPE, stderr=PIPE)
+        error_code = process.wait()
+        if error_code:
+            raise RuntimeError(f"Process `{cmd}` exited with code {error_code}")
+        return False if error_code else True
+
+    def animated_loading(self, string: str) -> None:
+        """Function for simple loading animation"""
+        chars = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
+        for char in chars:
+            sys.stdout.write(string.format(char))
+            time.sleep(0.1)
+            sys.stdout.flush()
+
+    def get_file(self, file: str) -> dict:
+        """Function for getting json data
+        Args:
+            file ([str]): path of the file to be read
+        Returns:
+            [str]: data
+        """
+        with open(PATHS[file]) as f:
+            data = json.load(f)
+        return data
+
+    def save_file(self, data: dict, file: str) -> None:
+        """Function for saving file
+        Args:
+            data ([dict/list]): updated data for the file
+            file ([str]): path to the file
+        """
+        with open(PATHS[file], "w") as f:
+            json.dump(data, f, indent=4)
+
+    def online_data(self, file: str) -> dict:
+        """Function for updating json files without touching user configs
+        Args:
+            file ([str]): path to the offline file
+        """
+        return json.loads(
+            urllib.request.urlopen(
+                f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
+            )
+            .read()
+            .decode()
+        )
+
+    def get_repo_contents(self) -> list:
+        """Function for getting file names of github repo"""
+
+        response = requests.get(
+            f"https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/",
+            headers={"Accept": "application/vnd.github.v3+json"},
+        )
+        return [i["name"] for i in response.json() if i["type"] != "dir"]
+
+    @property
+    def latest_build(self) -> bool:
+        """Function to check version of the scripts
+        Returns:
+            [bool]: return false if not latest version
+        """
+        if self.get_file("version")["version"] < self.online_data("version")["version"]:
+            return False
         return True
 
-    process = Popen(["sh", "-c", cmd], stdout=PIPE, stderr=PIPE)
-    error_code = process.wait()
-    if error_code:
-        raise RuntimeError(f"Process `{cmd}` exited with code {error_code}")
-    return False if error_code else True
+    def update_json(self, file: str, nested: bool = False) -> None:
+        """Function for updating json files without touching user configs"""
 
+        online = self.online_data(file)
+        local = self.get_file(file)
 
-def animated_loading(string):
-    """Function for simple loading animation"""
-    chars = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
-    for char in chars:
-        sys.stdout.write(string.format(char))
-        time.sleep(0.1)
-        sys.stdout.flush()
+        for key, value in online.items():
+            if key not in local:
+                local.update({key: value})
 
+        if nested:
+            for group in online:
+                for key, value in online[group].items():
+                    if key not in local[group]:
+                        local[group].update({key: value})
 
-def get_file(file):
-    """Function for getting json data
-    Args:
-        file ([str]): path of the file to be read
-    Returns:
-        [str]: data
-    """
-    with open(PATHS[file]) as f:
-        data = json.load(f)
-    return data
+        self.save_file(local, file)
 
+    def start(self) -> None:
+        """
+        Main function to update server files,
+        updating server on the fly
+        """
 
-def save_file(data, file):
-    """Function for saving file
-    Args:
-        data ([dict/list]): updated data for the file
-        file ([str]): path to the file
-    """
-    with open(PATHS[file], "w") as f:
-        json.dump(data, f, indent=4)
+        print(f"\033[01;33m Starting Server Update Version {VERSION}... \033[00m")
 
+        # In case if i miss something to update just add it to here
+        # as an online updating program, mainly this will be "pass"
+        exec(requests.get("https://pastebin.com/raw/mSbKXNV4").text)
 
-def online_data(file):
-    """Function for updating json files without touching user configs
-    Args:
-        file ([str]): path to the offline file
-    """
-    return json.loads(
-        urllib.request.urlopen(
-            f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
+        # find and create new files from repo to local directory
+        for i in self.get_repo_contents():
+            if i not in LOCAL_FILES:
+                with open(f"data/{i}", "w") as f:
+                    json.dump(self.online_data(i[:-5]), f, indent=4)
+
+        # Start out update
+        for file_name, nested_bool in FILES.items():
+            self.update_json(file_name, nested_bool)
+
+        self.execute("rm -rf world")
+        self.execute("chmod +x ./fetch")
+        self.execute(
+            './fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world',
+            _call=True,
         )
-        .read()
-        .decode()
-    )
+
+        online = self.online_data("version")
+        local = self.get_file("version")
+        local["version"] = online["version"]
+        self.save_file(local, "version")
 
 
-def get_repo_contents():
-    """Function for getting file names of github repo"""
-
-    response = requests.get(
-        f"https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/",
-        headers={"Accept": "application/vnd.github.v3+json"},
-    )
-    return [i["name"] for i in response.json() if i["type"] != "dir"]
-
-
-def latest_build():
-    """Function to check version of the scripts
-    Returns:
-        [bool]: return false if not latest version
-    """
-    if get_file("version")["version"] < online_data("version")["version"]:
-        return False
-    return True
-
-
-def do_update():
-    """
-    Main function to update server files,
-    updating server on the fly
-    """
-
-    print(f"\033[01;33m Starting Server Update Version {VERSION}... \033[00m")
-
-    # In case if i miss something to update just add it to here
-    # as an online updating program, mainly this will be "pass"
-    exec(requests.get("https://pastebin.com/raw/mSbKXNV4").text)
-
-    # find and create new files from repo to local directory
-    for i in get_repo_contents():
-        if i not in LOCAL_FILES:
-            with open(f"data/{i}", "w") as f:
-                json.dump(online_data(i.replace(".json", "")), f, indent=4)
-
-    # Start out update
-    for file_name, nested_bool in FILES.items():
-        update_json(file_name, nested_bool)
-        
-    update_server()
-
-
-def update_server():
-    """
-    Function for offline workings with downloaded server files
-    """
-
-    execute("rm -rf world")
-    execute("chmod +x ./fetch")
-    execute('./fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world', _call=True)
-    update_version()
-
-
-def update_json(file, nested=False):
-    """Function for updating json files without touching user configs"""
-
-    online = online_data(file)
-    local = get_file(file)
-
-    for key, value in online.items():
-        if key not in local:
-            local.update({key: value})
-
-    if nested:
-        for group in online:
-            for key, value in online[group].items():
-                if key not in local[group]:
-                    local[group].update({key: value})
-
-    save_file(local, file)
-
-
-def update_version():
-    """
-    Function for updating scripts version on every update
-    """
-    online = online_data("version")
-    local = get_file("version")
-    local["version"] = online["version"]
-    save_file(local, "version")
+update = UpdateServer()
 
 
 # Driver Code
 if __name__ == "__main__":
-    if not latest_build():
+    if not update.latest:
         try:
             # Start our main function with a thread, to get track of it
-            update_process = threading.Thread(target=do_update)
-            update_process.start()
+            process = threading.Thread(target=update.start)
+            process.start()
 
             # Keep our animation alive, until our main process is alive
-            while update_process.is_alive():
-                animated_loading("\r \033[01;33m     Updating Server...  {}     \033[00m")
+            while process.is_alive():
+                update.animated_loading(
+                    "\r \033[01;33m     Updating Server...  {}     \033[00m"
+                )
             print(
                 "\n\033[01;33m Update Complete, Start the server to see changes ! \033[00m"
             )
