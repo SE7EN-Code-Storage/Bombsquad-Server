@@ -30,7 +30,7 @@ sudo apt update && sudo apt install git && git clone https://github.com/LIRIK-SP
 ```
 - **To Start Server Every Time**
 ```bash
-chmod 777 bombsquad_server && cd dist && chmod 777 bombsquad_headless && cd .. && tmux new -s lirik-server
+cd Bombsquad-Server && chmod 777 bombsquad_server && cd dist && chmod 777 bombsquad_headless && cd .. && tmux new -s lirik-server
 ```
 ```bash
 ./bombsquad_server   # Everybody know this i think ?
