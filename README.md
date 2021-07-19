@@ -4,11 +4,6 @@
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 - **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
 
-## Pre-procedure
-
-- Python3.8
-- Pip3
-
 ## Some Features
 
 - All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
@@ -21,6 +16,32 @@
 - Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register) for more info
 - And Obviously a Prefix System
 - **AND THE MAIN: SIMPLICITY**
+
+## Pre-procedure
+
+- Python3.8
+- Pip3
+
+## Installation and Starting Server
+
+- **For First Run**
+```bash
+sudo apt update && sudo apt install git && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
+```
+- **To Start Server Every Time**
+```bash
+chmod 777 bombsquad_server && cd dist && chmod 777 bombsquad_headless && cd .. && tmux new -s lirik-server
+```
+```bash
+./bombsquad_server   # Everybody know this i think ?
+```
+
+## Other tmux Moderation
+```bash
+tmux ls                             # To see all running session for tmux..
+tmux attach-session -t lirik-server # To get attached again to our old session
+tmux delete-session -t lirik-server # To Delete session....
+```
 
 ## Updating Procedure
 
