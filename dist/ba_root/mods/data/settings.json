@@ -7,8 +7,13 @@
     "spam_time": 1,
     "nightmode": {
         "status": true,
-        "start": 19,
+        "start": 18,
         "end": 7
+    },
+    "auto_role": {
+        "status": true,
+        "admins": 3,
+        "elites": 10
     },
     "registration": false,
     "spam_protection": true,

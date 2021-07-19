@@ -27,6 +27,7 @@
         "system.daily_bonus": "Received {BONUS} \ue01f for coming in\nCome back tomorrow to receive again",
         "system.session.update_roles.remove_with_time": "You have been removed from {ROLE} {TIME}",
         "system.player.afk": "Removing {NAME} for being AFK for more than {SECS} seconds.",
+        "system.auto_role.add": "Congrats! You are on #{RANK}, Promoted to {ROLE}",
         "system.player.rank_tag": "Top #{RANK}",
         "system.player.role_tag": {
             "owners": "O W N E R",
