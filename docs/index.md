@@ -6,7 +6,7 @@
 - **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
 
 ## Some Features
-
+- Voting system for commands with full customisability for every command
 - All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
 - Pro Key to Activate Extra Awesome Features (Currently needed to change some existing commands and perks)
 - New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
