@@ -9,12 +9,12 @@
 
 - All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
 - Pro Key to Activate Extra Awesome Features (Currently needed to change some existing commands and perks)
-- New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register) for more info
-- All Kinds of Filters including Profanity, Spam (I personally like Profanity, cause you can't end it)
+- New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
+- All Kinds of Filters including Profanity, Spam (I personally think Profanity is ok, cause you can't end it)
 - Exterior Written Mods so that We can Update Base Server Files Easily
 - Administration System with Custom Time Periods
 - Use `/help` in chat to get usage and use of builtin commands
-- Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register) for more info
+- Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - And Obviously a Prefix System
 - **AND THE MAIN: SIMPLICITY**
 
