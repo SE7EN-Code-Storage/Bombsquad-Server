@@ -55,7 +55,8 @@ cd dist/ba_root/mods && python3 update.py
 
 ## Have A Question ?
 
-- **Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
+- **Click on right Bubble to instantly start chat with me !**
+- **Or Even Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
 - **If You Want any feature as a portable, please contact me**
 
 
