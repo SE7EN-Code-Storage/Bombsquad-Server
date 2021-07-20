@@ -1,6 +1,6 @@
 {
     "abuse_check": true,
-    "beg_check": false,
+    "beg_check": true,
     "chat_log": true,
     "snowfall": true,
     "log_toppers": true,

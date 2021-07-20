@@ -6,7 +6,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "kick": {
             "alias": [],
@@ -16,7 +17,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "info": {
             "alias": [
@@ -28,7 +30,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "stats": {
             "alias": [
@@ -40,7 +43,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "shop": {
             "alias": [
@@ -50,7 +54,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "removetag": {
             "alias": [
@@ -62,7 +67,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "purge": {
             "alias": [],
@@ -70,7 +76,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "donate": {
             "alias": [
@@ -83,7 +90,8 @@
                     1,
                     2
                 ]
-            }
+            },
+            "voting": false
         },
         "buy": {
             "alias": [],
@@ -91,7 +99,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "inventory": {
             "alias": [],
@@ -99,7 +108,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "find": {
             "alias": [],
@@ -107,7 +117,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "take": {
             "alias": [],
@@ -118,7 +129,8 @@
                     1,
                     2
                 ]
-            }
+            },
+            "voting": false
         },
         "convert": {
             "alias": [
@@ -131,7 +143,8 @@
                     1,
                     2
                 ]
-            }
+            },
+            "voting": false
         },
         "ban": {
             "alias": [
@@ -143,7 +156,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "elite": {
             "alias": [],
@@ -153,7 +167,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "admin": {
             "alias": [],
@@ -163,7 +178,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "moderator": {
             "alias": [],
@@ -173,7 +189,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "owner": {
             "alias": [],
@@ -183,7 +200,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "rolelist": {
             "alias": [
@@ -193,7 +211,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "settings": {
             "alias": [
@@ -203,7 +222,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "whois": {
             "alias": [
@@ -215,7 +235,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "restart": {
             "alias": [
@@ -225,7 +246,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "report": {
             "alias": [
@@ -237,7 +259,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "end": {
             "alias": [
@@ -247,7 +270,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": true
         },
         "warn": {
             "alias": [],
@@ -257,7 +281,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "mute": {
             "alias": [],
@@ -267,7 +292,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "announce": {
             "alias": [
@@ -277,7 +303,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "ip": {
             "alias": [],
@@ -285,7 +312,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "register": {
             "alias": [],
@@ -293,7 +321,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "redeem": {
             "alias": [
@@ -303,7 +332,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "resetcodes": {
             "alias": [
@@ -313,7 +343,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "addcodes": {
             "alias": [],
@@ -321,7 +352,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "skin": {
             "alias": [
@@ -332,7 +364,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "gloves": {
             "alias": [],
@@ -340,7 +373,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "camera": {
             "alias": [
@@ -350,7 +384,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "flymode": {
             "alias": [
@@ -360,7 +395,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "playsound": {
             "alias": [
@@ -370,7 +406,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "rainbow": {
             "alias": [
@@ -380,7 +417,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "nightmode": {
             "alias": [
@@ -390,7 +428,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "getprofile": {
             "alias": [
@@ -402,7 +441,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "box": {
             "alias": [],
@@ -410,7 +450,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "heal": {
             "alias": [
@@ -420,7 +461,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "curse": {
             "alias": [],
@@ -428,7 +470,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "fly": {
             "alias": [
@@ -438,7 +481,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "invisible": {
             "alias": [
@@ -448,7 +492,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "headless": {
             "alias": [
@@ -458,7 +503,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "remove": {
             "alias": [],
@@ -466,7 +512,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "superpunch": {
             "alias": [
@@ -477,7 +524,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "godmode": {
             "alias": [
@@ -487,7 +535,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "shield": {
             "alias": [],
@@ -495,7 +544,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "kill": {
             "alias": [],
@@ -503,7 +553,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "freeze": {
             "alias": [],
@@ -511,7 +562,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "unfreeze": {
             "alias": [
@@ -521,7 +573,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "knock": {
             "alias": [
@@ -531,7 +584,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "pause": {
             "alias": [],
@@ -539,7 +593,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "slowmotion": {
             "alias": [
@@ -550,7 +605,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "hug": {
             "alias": [],
@@ -561,7 +617,8 @@
                     1,
                     2
                 ]
-            }
+            },
+            "voting": false
         },
         "tag": {
             "alias": [
@@ -573,7 +630,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "tint": {
             "alias": [],
@@ -581,7 +639,8 @@
             "arguments": {
                 "min": 3,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "icyfloor": {
             "alias": [
@@ -591,7 +650,8 @@
             "arguments": {
                 "min": 0,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "shatter": {
             "alias": [],
@@ -601,7 +661,8 @@
                 "integer": [
                     2
                 ]
-            }
+            },
+            "voting": false
         },
         "whitelist": {
             "alias": [
@@ -613,7 +674,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "maxplayers": {
             "alias": [
@@ -626,7 +688,8 @@
                 "integer": [
                     1
                 ]
-            }
+            },
+            "voting": false
         },
         "partytype": {
             "alias": [
@@ -636,7 +699,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         },
         "partyname": {
             "alias": [
@@ -646,7 +710,8 @@
             "arguments": {
                 "min": 1,
                 "integer": null
-            }
+            },
+            "voting": false
         }
     },
     "help": {
