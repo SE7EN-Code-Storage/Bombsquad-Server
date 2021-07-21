@@ -55,5 +55,21 @@ cd dist/ba_root/mods && python3 update.py
 
 ## Have A Question ?
 
-- **Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
+- **Click on right Bubble to instantly start chat with me !**
+- **Or Even Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
 - **If You Want any feature as a portable, please contact me**
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/60f6d607d6e7610a49ac27c0/1fb23848a';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
