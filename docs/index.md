@@ -1,6 +1,5 @@
 # BOMBSQUAD-SERVER
 
-- Link for **[Github Profile](https://github.com/LIRIK-SPENCER)**
 - **The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features**
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 - **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
@@ -53,23 +52,13 @@ cd dist/ba_root/mods && python3 update.py
 ```
 **Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
 
+## Some Useful Links
+
+- Link for **[Github Profile](https://github.com/LIRIK-SPENCER)**
+- Link for **[ModsManager](https://github.com/LIRIK-SPENCER/mods_collection)**
+
 ## Have A Question ?
 
-- **Click on right Bubble to instantly start chat with me !**
+- **Even can contact on Discord @LIRIK#6494**
 - **Or Even Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
 - **If You Want any feature as a portable, please contact me**
-
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/60f6d607d6e7610a49ac27c0/1fb23848a';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
