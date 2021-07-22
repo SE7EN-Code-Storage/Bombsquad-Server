@@ -52,6 +52,10 @@ cd dist/ba_root/mods && python3 update.py
 ```
 **Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
 
+## Some Useful Links
+
+- Link for **[ModsManager](https://github.com/LIRIK-SPENCER/mods_collection)**
+
 ## Have A Question ?
 
 - **Even can contact on Discord @LIRIK#6494**
