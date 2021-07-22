@@ -55,7 +55,6 @@ cd dist/ba_root/mods && python3 update.py
 ## Some Useful Links
 
 - Link for **[Github Profile](https://github.com/LIRIK-SPENCER)**
-- Link for **[ModsManager](https://github.com/LIRIK-SPENCER/mods_collection)**
 
 ## Have A Question ?
 
