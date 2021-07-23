@@ -159,50 +159,6 @@
             },
             "voting": false
         },
-        "elite": {
-            "alias": [],
-            "role": "moderators",
-            "arguments": {
-                "min": 1,
-                "integer": [
-                    1
-                ]
-            },
-            "voting": false
-        },
-        "admin": {
-            "alias": [],
-            "role": "moderators",
-            "arguments": {
-                "min": 1,
-                "integer": [
-                    1
-                ]
-            },
-            "voting": false
-        },
-        "moderator": {
-            "alias": [],
-            "role": "owners",
-            "arguments": {
-                "min": 1,
-                "integer": [
-                    1
-                ]
-            },
-            "voting": false
-        },
-        "owner": {
-            "alias": [],
-            "role": "owners",
-            "arguments": {
-                "min": 1,
-                "integer": [
-                    1
-                ]
-            },
-            "voting": false
-        },
         "rolelist": {
             "alias": [
                 "rl"
@@ -254,6 +210,32 @@
                 "log"
             ],
             "role": "all",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1
+                ]
+            },
+            "voting": false
+        },
+        "add": {
+            "alias": [
+                "addrole"
+            ],
+            "role": "owners",
+            "arguments": {
+                "min": 2,
+                "integer": [
+                    1
+                ]
+            },
+            "voting": false
+        },
+        "remove": {
+            "alias": [
+                "removerole"
+            ],
+            "role": "owners",
             "arguments": {
                 "min": 2,
                 "integer": [
@@ -506,7 +488,7 @@
             },
             "voting": false
         },
-        "remove": {
+        "leave": {
             "alias": [],
             "role": "admins",
             "arguments": {
@@ -561,6 +543,17 @@
             "role": "admins",
             "arguments": {
                 "min": 0,
+                "integer": null
+            },
+            "voting": false
+        },
+        "check": {
+            "alias": [
+                "see"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 1,
                 "integer": null
             },
             "voting": false
@@ -664,19 +657,6 @@
             },
             "voting": false
         },
-        "whitelist": {
-            "alias": [
-                "wl"
-            ],
-            "role": "moderators",
-            "arguments": {
-                "min": 1,
-                "integer": [
-                    1
-                ]
-            },
-            "voting": false
-        },
         "maxplayers": {
             "alias": [
                 "maxplayer",
@@ -716,7 +696,6 @@
     },
     "help": {
         "convert": "Command to convert score into tickets\nUsage: /convert <ammount_of_score>(required)",
-        "admin": "Command to add any player in the admins's list\nUsage: /admins <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(optional)",
         "ban": "Command to ban any player on the server\nUsage: /ban <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(required) <reason>(optional)",
         "buy": "Command to buy items/effects on the server\nUsage: /buy <item/effect>(required)",
         "restart": "Command to restart server\nUsage: /restart",
@@ -726,14 +705,11 @@
         "resetcodes": "Command to reset all codes, and make them usable again\nUsage: /rc <no_of_codes>(optional)",
         "addcodes": "Command to add more redeemable codes\nUsage: /addcodes <no_of_codes>(optional)",
         "donate": "Command to donate tickets to other players\nUsage: /donate <ammount>(required) <client_id>(required) <reason>(optional)",
-        "elite": "Command to add any player in the elites's list\nUsage: /elites <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(optional)",
         "find": "Command to find tickets\nUsage: /find",
         "info": "Command to get info of any/every player on the server\nUsage: /info <playername>(optional)",
         "inventory": "Command to get items in inventory\nUsage: /inventory <client_id>(optional)",
         "kick": "Command to kick any player on the server\nUsage: /kick <client id>(required) <ban time hours>(optional)",
-        "moderator": "Command to add any player in the moderators's list\nUsage: /moderators <client_id>(required)",
         "mute": "Command to mute players or whole server\nUsage: /mute <clientid>(required) <reason>(optional)",
-        "owner": "Command to add any player in the owners's list\nUsage: /owners <client_id>(required)",
         "purge": "Command to purge items or effects listed in shop system\nUsage: /purge <effects/items>(required)",
         "redeem": "Command to redeem codes for tickets\nUsage: /redeem <code>(required)",
         "register": "Command to register for tournaments\nUsage: /register <Discord-ID>(optional)",
@@ -761,7 +737,7 @@
         "fly": "Command to fly any player\nUsage: /fly <all/player_id>(optional)",
         "invisible": "Command to make anyone invisible\nUsage: /invisible <all/player_id>(optional)",
         "headless": "Command to make anyone headless\nUsage: /headless <all/player_id>(optional)",
-        "remove": "Command to remove anyone from game\nUsage: /remove <all/player_id>(optional)",
+        "leave": "Command to remove anyone from game\nUsage: /leave <all/player_id>(optional)",
         "superpunch": "Command to get powerfull punch\nUsage: /superpunch <all/player_id>(optional)",
         "godmode": "Command to become god\nUsage: /godmode <all/player_id>(optional)",
         "shield": "Command to get shield\nUsage: /shield <all/player_id>(optional)",
@@ -775,10 +751,12 @@
         "tint": "Command to use tint\nUsage: /tint <r>(optional) <code>(required)",
         "icyfloor": "Command to freeze floor\nUsage: /icyfloor",
         "shatter": "Command to shatter players\nUsage: /shatter <all/player_id>(required) <level>(required)",
-        "whitelist": "Command to add/remove player to/from players\nUsage: /whitelist <client_id>(required) <r>(optional)",
+        "check": "Command to check if you are in role\nUsage: /check <role_name>(required)",
         "maxplayers": "Command to increase max players\nUsage: /maxplayers <count>(required)",
         "partytype": "Command to change partytype\nUsage: /partytype <public/private>(optional)",
         "partyname": "Command to change partyname\nUsage: /partyname <name>(required)",
-        "tag": "Command to add/remove tag\nUsage: /tag <client_id>(required) <tag>(required)"
+        "tag": "Command to add/remove tag\nUsage: /tag <client_id>(required) <tag>(required)",
+        "add": "Command to add player in rolea\nUsage: /add <client_id>(required) <role_name>(required) <1m/1h/1d/1m>(optional)",
+        "remove": "Command to remove player from any roles\nUsage: /remove <client_id>(required) <role_name>(required)"
     }
 }
