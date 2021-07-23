@@ -12,9 +12,8 @@ from subprocess import Popen, PIPE
 # ba_meta export plugin
 class EnableLirikServer(ba.Plugin):
     def __init__(self):
-        print("plugin")
-
-        # ----------------------------------------- APPEND DIRECTORY TO PYTHON PATH
+    
+        # APPEND DIRECTORY TO PYTHON PATH
         path.extend(
             [
                 str(Path(Path(__file__).parent)),
@@ -22,7 +21,7 @@ class EnableLirikServer(ba.Plugin):
             ]
         )
 
-        # ----------------------------------------- TRY TO INSTALL REQUIRED MODULES
+        # TRY TO INSTALL REQUIRED MODULES
         try:
             import ujson, arrow, requests
             del ujson, arrow, requests
