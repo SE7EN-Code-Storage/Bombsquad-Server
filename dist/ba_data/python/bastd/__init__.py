@@ -3,6 +3,4 @@
 """Ballistica standard library: games, UI, etc."""
 
 # ba_meta require api 6
-import world
 
-del world
