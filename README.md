@@ -1,4 +1,4 @@
-# BOMBSQUAD-SERVER
+# BOMBSQUAD-SERVER [CURRENT LATEST VERSION](https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/version.json)
 
 - **The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features**
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
