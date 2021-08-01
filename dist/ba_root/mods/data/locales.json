@@ -46,6 +46,7 @@
         "commands.maxplayers": "Players limit set to {COUNT}",
         "commands.start_vote": "A Vote for `{COMMAND1}` has started, Type `/{COMMAND2}` to Vote !",
         "commands.vote_fail": "Vote Has Failed",
+        "commands.vote_fail_less_players": "Atleast 2 Players Needed to start a Vote",
         "commands.vote_success": "Vote has Successeded for `{COMMAND}`",
         "commands.votes_needed": "{NUM} Votes Needed for `{COMMAND}`",
         "commands.exception_occured_error": "Exception occured while handling the function",
