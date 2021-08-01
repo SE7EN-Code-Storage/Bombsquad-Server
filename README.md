@@ -1,4 +1,4 @@
-# BOMBSQUAD-SERVER [CURRENT LATEST VERSION](https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/version.json)
+# BOMBSQUAD-SERVER
 
 - **The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features**
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
@@ -55,7 +55,6 @@ tmux delete-session -t lirik-server # To Delete session....
 ```bash
 cd dist/ba_root/mods && python3 update
 ```
-**Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
 
 ## Have A Question ?
 
