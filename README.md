@@ -55,7 +55,6 @@ tmux delete-session -t lirik-server # To Delete session....
 ```bash
 cd dist/ba_root/mods && python3 update
 ```
-**Couldn't find `update.py` file? Get it from [here](https://gist.github.com/LIRIK-SPENCER/b919aaf106340e895d15cd948901990c#file-update-py)**
 
 ## Have A Question ?
 
