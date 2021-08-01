@@ -29,7 +29,6 @@
 
 ## Installation and Starting Server
 
-- **NOTE: On the first run you need to restart server once to register and enable our server plugin**
 - **For First Run**
 ```bash
 sudo apt update && sudo apt install git && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
