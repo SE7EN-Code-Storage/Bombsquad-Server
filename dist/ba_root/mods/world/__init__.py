@@ -1,38 +1,12 @@
-# -*- coding: utf-8 -*-
 # STANDARD MODS LIBRARY FOR EXTRA MODS
 
-import time
-from pathlib import Path
-from sys import path, executable
-from subprocess import Popen, PIPE
 
-# APPEND DIRECTORY TO PYTHON PATH
-path.extend([
-    str(Path(Path(__file__).parent)),
-    str(Path(Path(__file__).parent, "site-packages")),
-])
+__version__ = "1.1.0"
+__author__ = "LIRIK SPENCER"
 
-# TRY TO INSTALL REQUIRED MODULES
-try:
-    import ujson, arrow, requests
-    del ujson, arrow, requests
+# I will update this as i get ideas from you guys !
+__contributors__ = {"LIRIK SPENCER": "Created Base Mods"}
 
-except (ModuleNotFoundError, ImportError):
-    try:
-        Popen([
-            executable,
-            "-m",
-            "pip",
-            "install",
-            "ujson==4.0.2",
-            "arrow==1.0.3",
-            "requests",
-        ],
-              stdout=PIPE,
-              stderr=PIPE)
-        time.sleep(10)
-    except Exception as e:
-        print("Error occured: ", e)
 
-from . import run, system
-del run, system
+"""Doubt on info? Grab originals from ->
+https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/__init__.py"""

@@ -13,6 +13,8 @@ class Config:
     muted_ids: list
     nightmode: bool
     chatbot_ids: list
+    default_stats: dict
+    latest_version: str
 
 
 # Start with temporary values ...
@@ -23,3 +25,20 @@ Config.voters = list()
 Config.nightmode = False
 Config.muted_ids = list()
 Config.chatbot_ids = list()
+Config.latest_version = str()
+Config.default_stats = {
+    "kd": 0,
+    "tag": "",
+    "rank": 0,
+    "skin": "",
+    "name": "",
+    "items": {},
+    "kills": 0,
+    "score": 0,
+    "deaths": 0,
+    "played": 0,
+    "balance": 0,
+    "last_seen": 0,
+    "last_entry": 0,
+    "account_id": "",
+}

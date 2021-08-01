@@ -15,12 +15,13 @@ from pathlib import Path
 from subprocess import Popen, PIPE, call
 
 # Versioning
-VERSION = 1.0
+VERSION = 1.2
 
 # Extending python path for data folder
 sys.path.append(str(Path(Path(__file__).parent, "data")))
 
 LOCAL_FILES = os.listdir("data/")
+print(LOCAL_FILES)
 
 # Dict of Paths
 PATHS = {
@@ -169,20 +170,14 @@ class UpdateServer(object):
             self.update_json(file_name, nested_bool)
 
         self.execute("rm -rf world")
-        self.execute("chmod +x ./fetch")
+        self.execute("chmod +x ./update/fetch")
         self.execute(
-            './fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world',
+            './update/fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world',
             _call=True,
         )
 
-        online = self.online_data("version")
-        local = self.get_file("version")
-        local["version"] = online["version"]
-        self.save_file(local, "version")
-
 
 update = UpdateServer()
-
 
 # Driver Code
 if __name__ == "__main__":
