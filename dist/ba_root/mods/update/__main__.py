@@ -18,8 +18,9 @@ from subprocess import Popen, PIPE, call
 VERSION = 1.2
 
 # Extending python path for data folder
-sys.path.append(os.path.dirname(__file__)[:-6])
-sys.path.append(os.path.dirname(__file__) + "data")
+sys.path.extend(
+    [os.path.dirname(__file__)[:-6], os.path.dirname(__file__)[:-6] + "data"]
+)
 
 LOCAL_FILES = os.listdir("data/")
 
