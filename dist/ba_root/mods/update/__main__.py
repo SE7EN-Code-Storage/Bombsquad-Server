@@ -11,17 +11,17 @@ import time
 import requests
 import threading
 import urllib.request
-from pathlib import Path
 from subprocess import Popen, PIPE, call
+
 
 # Versioning
 VERSION = 1.2
 
 # Extending python path for data folder
-sys.path.append(str(Path(Path(__file__).parent, "data")))
+sys.path.append(os.path.dirname(__file__)[:-6])
+sys.path.append(os.path.dirname(__file__) + "data")
 
 LOCAL_FILES = os.listdir("data/")
-print(LOCAL_FILES)
 
 # Dict of Paths
 PATHS = {
@@ -30,7 +30,6 @@ PATHS = {
     "roles": "data/roles.json",
     "locales": "data/locales.json",
     "prices": "data/prices.json",
-    "version": "data/version.json",
 }
 
 # Files to be updated...
@@ -47,9 +46,18 @@ class UpdateServer(object):
     """Main Class For Server Update"""
 
     def __init__(self) -> None:
+        from world import __version__
+
         self.latest = True
 
-        if self.get_file("version")["version"] < self.online_data("version")["version"]:
+        for i in urllib.request.urlopen(
+            f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/world/__init__.py"
+        ).readlines():
+            i = i.decode()
+            if i.startswith("__version__"):
+                self.latest_version = float(i.split()[2])
+
+        if __version__ < self.latest_version:
             self.latest = False
 
     def execute(self, cmd: str, _call: bool = False) -> bool:
@@ -118,16 +126,6 @@ class UpdateServer(object):
             headers={"Accept": "application/vnd.github.v3+json"},
         )
         return [i["name"] for i in response.json() if i["type"] != "dir"]
-
-    @property
-    def latest_build(self) -> bool:
-        """Function to check version of the scripts
-        Returns:
-            [bool]: return false if not latest version
-        """
-        if self.get_file("version")["version"] < self.online_data("version")["version"]:
-            return False
-        return True
 
     def update_json(self, file: str, nested: bool = False) -> None:
         """Function for updating json files without touching user configs"""
