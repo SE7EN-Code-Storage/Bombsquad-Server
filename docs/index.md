@@ -4,7 +4,13 @@
 - **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
 - **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
 
+### Available Commands
+```python
+['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'settings', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
+```
+
 ## Some Features
+- **Use '/help' in chat to get usage and use of builtin commands**
 - Voting system for commands with full customisability for every command
 - All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
 - Pro Key to Activate Extra Awesome Features (Currently needed to change some existing commands and perks)
@@ -12,10 +18,9 @@
 - All Kinds of Filters including Profanity, Spam (I personally think Profanity is ok, cause you can't end it)
 - Exterior Written Mods so that We can Update Base Server Files Easily
 - Administration System with Custom Time Periods
-- Use `/help` in chat to get usage and use of builtin commands
 - Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - And Obviously a Prefix System
-- **AND THE MAIN: SIMPLICITY**
+- **AND THE MAIN: 'SIMPLICITY'**
 
 ## Pre-procedure
 
