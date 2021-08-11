@@ -10,9 +10,10 @@ class Config:
     mute: bool
     voter: list
     voters: list
+    players: dict
     muted_ids: list
-    nightmode: bool
-    chatbot_ids: list
+    night_mode: bool
+    chat_bot_ids: list
     default_stats: dict
     latest_version: str
 
@@ -22,9 +23,10 @@ Config.mute = False
 Config.last = dict()
 Config.voter = list()
 Config.voters = list()
-Config.nightmode = False
+Config.players = dict()
+Config.night_mode = False
 Config.muted_ids = list()
-Config.chatbot_ids = list()
+Config.chat_bot_ids = list()
 Config.latest_version = str()
 Config.default_stats = {
     "kd": 0,

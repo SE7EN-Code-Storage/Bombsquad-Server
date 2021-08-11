@@ -20,6 +20,17 @@
             },
             "voting": false
         },
+        "jerry": {
+            "alias": [
+                "bot"
+            ],
+            "role": "all",
+            "arguments": {
+                "min": 0,
+                "integer": []
+            },
+            "voting": false
+        },
         "info": {
             "alias": [
                 "list"
@@ -696,7 +707,7 @@
     },
     "help": {
         "convert": "Command to convert score into tickets\nUsage: /convert <ammount_of_score>(required)",
-        "ban": "Command to ban any player on the server\nUsage: /ban <client_id>(required) <time [1s, 1m, 1h, 1d, 1w]>(required) <reason>(optional)",
+        "ban": "Command to ban any player on the server\nUsage: /ban <client_id>(required) <period [1s, 1m, 1h, 1d, 1w]>(required) <reason>(optional)",
         "buy": "Command to buy items/effects on the server\nUsage: /buy <item/effect>(required)",
         "restart": "Command to restart server\nUsage: /restart",
         "end": "Command to end current game\nUsage: /end",
@@ -708,7 +719,8 @@
         "find": "Command to find tickets\nUsage: /find",
         "info": "Command to get info of any/every player on the server\nUsage: /info <playername>(optional)",
         "inventory": "Command to get items in inventory\nUsage: /inventory <client_id>(optional)",
-        "kick": "Command to kick any player on the server\nUsage: /kick <client id>(required) <ban time hours>(optional)",
+        "kick": "Command to kick any player on the server\nUsage: /kick <client id>(required) <ban period hours>(optional)",
+        "jerry": "Command to interact with server bot\nUsage: /jerry",
         "mute": "Command to mute players or whole server\nUsage: /mute <clientid>(required) <reason>(optional)",
         "purge": "Command to purge items or effects listed in shop system\nUsage: /purge <effects/items>(required)",
         "redeem": "Command to redeem codes for tickets\nUsage: /redeem <code>(required)",
@@ -756,7 +768,7 @@
         "partytype": "Command to change partytype\nUsage: /partytype <public/private>(optional)",
         "partyname": "Command to change partyname\nUsage: /partyname <name>(required)",
         "tag": "Command to add/remove tag\nUsage: /tag <client_id>(required) <tag>(required)",
-        "add": "Command to add player in rolea\nUsage: /add <client_id>(required) <role_name>(required) <1m/1h/1d/1m>(optional)",
+        "add": "Command to add player in roles\nUsage: /add <client_id>(required) <role_name>(required) <1m/1h/1d/1m>(optional)",
         "remove": "Command to remove player from any roles\nUsage: /remove <client_id>(required) <role_name>(required)"
     }
 }

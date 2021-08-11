@@ -5,7 +5,7 @@
     "snowfall": true,
     "log_toppers": true,
     "spam_time": 1,
-    "nightmode": {
+    "night_mode": {
         "status": true,
         "start": 18,
         "end": 7
@@ -24,7 +24,7 @@
         "admins"
     ],
     "texts": [
-        "Heartly Welcome To the Server",
+        "Heartily Welcome To the Server",
         "I hope for your good stay here"
     ],
     "backup_service": {
