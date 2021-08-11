@@ -7,6 +7,6 @@ from . import (
     internal,
     session,
     mapdata,
-    decorate,
+    spaz,
     mode,
 )
