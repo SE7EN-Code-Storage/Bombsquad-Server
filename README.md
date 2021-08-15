@@ -6,11 +6,11 @@
 
 ### Available Commands
 ```python
-['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'settings', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
+['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
 ```
 
 ### Notes
-- **v2.5** version needs to be clean installed
+- **v2.5** version needs to be clean installed !
 
 ## Some Features
 - **Use '/help' in chat to get usage and use of builtin commands**
