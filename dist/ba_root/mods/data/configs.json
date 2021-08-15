@@ -17,10 +17,10 @@
         "elites": 10
     },
     "cooldown": {
-        "info": 50,
-        "find": 500,
-        "stats": 100,
-        "redeem": 200,
+        "/info": 50,
+        "/find": 500,
+        "/stats": 100,
+        "/redeem": 200,
         "promote": 200
     },
     "backup_service": {
