@@ -5,6 +5,10 @@ class FewArgumentsError(Exception):
     """Raised when we don't meet the minimum arguments required"""
 
 
+class DataTypeError(Exception):
+    """Raised when we don't provide the required data type"""
+
+
 class ManyArgumentsError(Exception):
     """Raised when we provide more arguments then required"""
 
@@ -15,6 +19,7 @@ class NonImplementedError(Exception):
 
 class MustBeIntegerError(Exception):
     """Raised when the argument provided is a letter rather than integer"""
+
     def __init__(self, arg):
         self.arg = arg
         super().__init__(self.arg)
@@ -27,12 +32,17 @@ class RoleNameError(Exception):
     """Raised when the provided is not found in roles json file"""
 
 
+class ConfigClassError(Exception):
+    """Base Exception for Config"""
+
+
 class ArgumentDoesntMatchError(Exception):
     """
     ```Raised when the argument provided doesn't match with the required one```
     For an example we have a shop command where we use /shop (effects/items) and
     if we provide anything else rather than (effects/items), this will be raised.
     """
+
     def __init__(self, arg):
         self.arg = arg
         super().__init__(self.arg)

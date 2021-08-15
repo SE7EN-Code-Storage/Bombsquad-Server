@@ -26,7 +26,7 @@ LOCAL_FILES = os.listdir("data/")
 
 # Dict of Paths
 PATHS = {
-    "settings": "data/settings.json",
+    "configs": "data/configs.json",
     "commands": "data/commands.json",
     "roles": "data/roles.json",
     "locales": "data/locales.json",
@@ -35,7 +35,7 @@ PATHS = {
 
 # Files to be updated...
 FILES = {
-    "settings": False,
+    "configs": True,
     "commands": True,
     "locales": True,
     "prices": True,
@@ -168,12 +168,12 @@ class UpdateServer(object):
         for file_name, nested_bool in FILES.items():
             self.update_json(file_name, nested_bool)
 
-        self.execute("rm -rf world")
         self.execute("chmod +x ./update/fetch")
         self.execute(
-            './update/fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./world',
+            './update/fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./new_world',
             _call=True,
         )
+        self.execute("'cp' -rf ./new_world/* world/")
 
 
 update = UpdateServer()

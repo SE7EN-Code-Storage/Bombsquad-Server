@@ -1,44 +1,48 @@
 {
-    "abuse_check": true,
-    "beg_check": true,
-    "chat_log": true,
-    "snowfall": true,
-    "log_toppers": true,
-    "spam_time": 1,
-    "night_mode": {
+    "chat": {
+        "spam_time": 1,
+        "chat_log": true,
+        "beg_check": true,
+        "abuse_check": true,
+        "spam_protection": true
+    },
+    "nightmode": {
         "status": true,
         "start": 18,
         "end": 7
     },
-    "auto_role": {
-        "status": true,
+    "autorole": {
+        "status": false,
         "admins": 3,
         "elites": 10
     },
-    "registration": false,
-    "spam_protection": true,
-    "timezone": "Asia/Kolkata",
-    "include_roles": [
-        "owners",
-        "moderators",
-        "admins"
-    ],
-    "texts": [
-        "Heartily Welcome To the Server",
-        "I hope for your good stay here"
-    ],
+    "cooldown": {
+        "info": 50,
+        "find": 500,
+        "stats": 100,
+        "redeem": 200,
+        "promote": 200
+    },
     "backup_service": {
+        "status": true,
         "period": "weekly",
         "files": [
             "stats",
             "roles"
         ]
     },
-    "cooldown": {
-        "promote": 200,
-        "/stats": 100,
-        "/find": 500,
-        "/redeem": 200,
-        "/info": 50
+    "game": {
+        "snowfall": true,
+        "log_toppers": true,
+        "registration": false,
+        "include_roles": [
+            "moderators",
+            "owners",
+            "admins"
+        ],
+        "texts": [
+            "Heartily Welcome To the Server",
+            "I hope for your good stay here"
+        ]
     }
 }

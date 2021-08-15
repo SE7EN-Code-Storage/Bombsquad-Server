@@ -1,7 +1,7 @@
 # STANDARD MODS LIBRARY FOR EXTRA MODS
 
 
-__version__ = 2.2
+__version__ = 2.5
 __author__ = "LIRIK SPENCER"
 
 # I will update this as i get ideas from you guys !
