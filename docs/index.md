@@ -6,8 +6,11 @@
 
 ### Available Commands
 ```python
-['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'settings', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
+['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
 ```
+
+### Notes
+- **v2.5** version needs to be clean installed
 
 ## Some Features
 - **Use '/help' in chat to get usage and use of builtin commands**
@@ -20,7 +23,7 @@
 - Administration System with Custom Time Periods
 - Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - And Obviously a Prefix System
-- **AND THE MAIN: 'SIMPLICITY'**
+- **AND THE MAIN: SIMPLICITY**
 
 ## Pre-procedure
 
@@ -56,12 +59,8 @@ tmux delete-session -t lirik-server # To Delete session....
 cd dist/ba_root/mods && python3 update
 ```
 
-## Some Useful Links
-
-- Link for **[Github Profile](https://github.com/LIRIK-SPENCER)**
-
 ## Have A Question ?
 
 - **Even can contact on Discord @LIRIK#6494**
-- **Or Even Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
+- **Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started**
 - **If You Want any feature as a portable, please contact me**
