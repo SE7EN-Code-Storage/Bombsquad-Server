@@ -181,17 +181,6 @@
             },
             "voting": false
         },
-        "settings": {
-            "alias": [
-                "edit"
-            ],
-            "role": "owners",
-            "arguments": {
-                "min": 0,
-                "integer": null
-            },
-            "voting": false
-        },
         "whois": {
             "alias": [
                 "gp"
@@ -728,7 +717,6 @@
         "removetag": "Command to remove tag of a player > forcefully\nUsage: /removetag <client_id>(required)",
         "report": "Command to report player\nUsage: /report <client_id>(required) <reason>(required)",
         "rolelist": "Command to see role's list\nUsage: /rl <role>(required)",
-        "settings": "Command to edit settings from commands\nUsage: /settings <key>(required) <value>(required)",
         "shop": "Command to get items or effects listed in shop system\nUsage: /shop <effects/items>(required)",
         "skin": "Command to get modded skins on the server\nUsage: /skin <name>(required) or <reset>(optional)",
         "stats": "Command to get stats of a player on the server\nUsage: /stats <client_id>(optional)",
