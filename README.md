@@ -10,7 +10,7 @@
 ```
 
 ### Notes
-- **v2.5** version needs to be clean installed
+- **v2.5** version needs to be clean installed !
 
 ## Some Features
 - **Use '/help' in chat to get usage and use of builtin commands**
