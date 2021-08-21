@@ -1,6 +1,6 @@
 from tools.configclass import ConfigMaster
 
-__all__ = []
+__all__ = ["configs"]
 
 
 def server_config():
