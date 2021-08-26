@@ -43,7 +43,6 @@ except ImportError:
 
 class WordSub(dict):
     """All-in-one multiple-string-substitution class."""
-
     def _wordToRegex(self, word):
         """Convert a word to a regex object which matches the word."""
         if word != "" and word[0].isalpha() and word[-1].isalpha():
@@ -76,10 +75,12 @@ class WordSub(dict):
     def __setitem__(self, i, y):
         self._regexIsDirty = True
         # for each entry the user adds, we actually add three entrys:
-        super(type(self), self).__setitem__(i.lower(), y.lower())  # key = value
+        super(type(self), self).__setitem__(i.lower(),
+                                            y.lower())  # key = value
         super(type(self), self).__setitem__(string.capwords(i),
                                             string.capwords(y))  # Key = Value
-        super(type(self), self).__setitem__(i.upper(), y.upper())  # KEY = VALUE
+        super(type(self), self).__setitem__(i.upper(),
+                                            y.upper())  # KEY = VALUE
 
     def sub(self, text):
         """Translate text, returns the modified text."""

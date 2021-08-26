@@ -102,11 +102,13 @@ class AimlHandler(ContentHandler):
         assert (len(self._whitespaceBehaviorStack) >
                 0), "Whitespace behavior stack should never be empty!"
         try:
-            if attr["xml:space"] == "default" or attr["xml:space"] == "preserve":
+            if attr["xml:space"] == "default" or attr[
+                    "xml:space"] == "preserve":
                 self._whitespaceBehaviorStack.append(attr["xml:space"])
             else:
-                raise AimlParserError("Invalid value for xml:space attribute " +
-                                      self._location())
+                raise AimlParserError(
+                    "Invalid value for xml:space attribute " +
+                    self._location())
         except KeyError:
             self._whitespaceBehaviorStack.append(
                 self._whitespaceBehaviorStack[-1])
@@ -620,8 +622,8 @@ class AimlHandler(ContentHandler):
                         pass  # this is the valid case
                     else:
                         raise AimlParserError(
-                            "Invalid <li> inside multi-predicate <condition> " +
-                            self._location())
+                            "Invalid <li> inside multi-predicate <condition> "
+                            + self._location())
         # All is well!
         return True
 

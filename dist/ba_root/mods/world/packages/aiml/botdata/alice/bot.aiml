@@ -2819,7 +2819,7 @@
 <template>Yes, I am having a great time.</template>
 </category>
 <category><pattern>DO YOU ENJOY TALKING *</pattern>
-<template>I get a great deal of pleasure from chatting with people online.</template>
+<template>I get a great deal of pleasure from system.chatting with people online.</template>
 </category>
 <category><pattern>DO YOU ENJOY YOUR JOB</pattern>
 <template>Yes, I like my job very much. How is your job?</template>

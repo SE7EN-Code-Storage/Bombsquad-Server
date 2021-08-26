@@ -12,15 +12,15 @@
         "end": 7
     },
     "autorole": {
-        "status": false,
+        "status": true,
         "admins": 3,
         "elites": 10
     },
     "cooldown": {
-        "/info": 50,
-        "/find": 500,
-        "/stats": 100,
-        "/redeem": 200,
+        "info": 50,
+        "find": 500,
+        "stats": 100,
+        "redeem": 200,
         "promote": 200
     },
     "backup_service": {
@@ -33,6 +33,7 @@
     },
     "game": {
         "snowfall": true,
+        "timezone": "Asia/Kolkata",
         "log_toppers": true,
         "registration": false,
         "include_roles": [
@@ -42,8 +43,7 @@
         ],
         "texts": [
             "Heartily Welcome To the Server",
-            "I hope for your good stay here",
-            "Add Your Strings"
+            "I hope for your good stay here"
         ]
     }
 }

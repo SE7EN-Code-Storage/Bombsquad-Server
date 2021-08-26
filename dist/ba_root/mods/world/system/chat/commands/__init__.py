@@ -10,11 +10,11 @@ Usage:
         "alias": ["info"],      # Other accessing names for `help` command
         "role": "all",          # Player who can access to this command
         "arguments": {
-            "min": 0,           # Minimun required arguments, here we can use directy `/help` so min = 0 
+            "min": 0,           # Minimum required arguments, here we can use directly `/help` so min = 0
                                 # NOTE: Our msg will be a list while executing commands i.e ["help" "command_name"],
                                   So our msg[0] = base_command_name and our arguments starts from msg[1]
 
-            "integer": null     # This is helpfull when we need to have an integer as an argument, else keep it null
+            "integer": null     # This is helpful when we need to have an integer as an argument, else keep it null
         }
     }
 
