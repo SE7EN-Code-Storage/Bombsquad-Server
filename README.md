@@ -1,16 +1,47 @@
-# BOMBSQUAD-SERVER
+<p align="center">
+  <br><samp>
+  Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make it rather than Play it!<br>
+</samp></p>
+<p align="center">
+  <a href="https://github.com/LIRIK-SPENCER/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Want+A+Full+Core+Bombsquad+Script?;Which+Should+be+Speedy?;With+no+Memory+Leaks+Caused+by+Code;Here+What+I+Have+Made&center=true&width=500&height=50"></a>
+</p>
+<div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
+<hr/>
+<h4 align="center">The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features. I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet). Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of C with the simplicity of Python)</h4>
+<br>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=LIRIK-SPENCER" alt="LIRIK-SPENCER" />
+  <a href="https://github.com/LIRIK-SPENCER/"><img src="https://img.shields.io/github/last-commit/LIRIK-SPENCER/Bombsquad-Server?style=flat-square?color=red&label=Last%20Updated%20"></a>
+</p>
 
-- **The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features**
-- **I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet)**
-- **Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of 'C' with the simplicity of 'Python')**
+<details>
+  <summary><b>Notes<b/></summary><br/>
 
-### Available Commands
-```python
-['help', 'kick', 'info', 'stats', 'shop', 'removetag', 'purge', 'donate', 'buy', 'inventory', 'find', 'take', 'convert', 'ban', 'rolelist', 'whois', 'restart', 'report', 'add', 'remove', 'end', 'warn', 'mute', 'announce', 'ip', 'register', 'redeem', 'resetcodes', 'addcodes', 'skin', 'gloves', 'camera', 'flymode', 'playsound', 'rainbow', 'nightmode', 'getprofile', 'box', 'heal', 'curse', 'fly', 'invisible', 'headless', 'leave', 'superpunch', 'godmode', 'shield', 'kill', 'freeze', 'check', 'unfreeze', 'knock', 'pause', 'slowmotion', 'hug', 'tag', 'tint', 'icyfloor', 'shatter', 'maxplayers', 'partytype', 'partyname']
-```
+<!--START_SECTION:waka-->
+- v2.5 version needs to be clean installed !
+  
+<!--END_SECTION:waka-->
+</details>
 
-### Notes
-- **v2.5** version needs to be clean installed !
+<details>
+  <summary><b>ChangeLog<b/></summary><br/>
+
+<!--START_SECTION:waka-->
+August 31 2021
+  - Fixed Server Lag
+  
+<!--END_SECTION:waka-->
+</details>
+  
+<details>
+  <summary><b>Preinstalation</summary><br/>
+
+<!--START_SECTION:waka-->
+- pip3
+- pthon3.8
+  
+<!--END_SECTION:waka-->
+</details>
 
 ## Some Features
 - **Use '/help' in chat to get usage and use of builtin commands**
@@ -25,11 +56,7 @@
 - And Obviously a Prefix System
 - **AND THE MAIN: SIMPLICITY**
 
-## Pre-procedure
-
-- Python3.8
-- Pip3
-
+    
 ## Installation and Starting Server
 
 - **For First Run**
@@ -46,9 +73,10 @@ cd Bombsquad-Server && chmod 777 bombsquad_server && cd dist && chmod 777 bombsq
 
 ## Other tmux Moderation
 ```bash
-tmux ls                             # To see all running session for tmux..
-tmux attach-session -t lirik-server # To get attached again to our old session
-tmux delete-session -t lirik-server # To Delete session....
+tmux ls                                # To see all running session for tmux.
+pkill -f tmux                          # To kill all tmux sessions.
+tmux attach-session -t lirik-server    # To get attached again to our old session.
+tmux delete-session -t lirik-server    # To Delete particular session.
 ```
 
 ## Updating Procedure
