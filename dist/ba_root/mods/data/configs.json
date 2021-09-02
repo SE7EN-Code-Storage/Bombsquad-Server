@@ -36,6 +36,7 @@
         "timezone": "Asia/Kolkata",
         "log_toppers": true,
         "registration": false,
+        "kick_newly_created_ids": true,
         "include_roles": [
             "moderators",
             "owners",

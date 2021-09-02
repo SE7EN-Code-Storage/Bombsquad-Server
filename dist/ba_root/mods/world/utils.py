@@ -37,13 +37,26 @@ class FileType(IntEnum):
 
 @dataclass
 class Config:
+    """Default storage class for configuration information, gets valued at runtime"""
+
+    # Chat related storage fucntionality
     last: dict
     mute: bool
+    muted_ids: list
+    chat_bot_ids: list
+
+    # Commands related storage functionality
     voter: list
     voters: list
-    players: dict
-    muted_ids: list
+    default_command: dict
+    commands_plugins: dict
+
+    # Game related fucntionality
     night_mode: bool
-    chat_bot_ids: list
+    default_perk: dict
+
+    # Stats related storage fucntionality
     default_stats: dict
+
+    # Versioning
     latest_version: str
