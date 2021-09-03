@@ -27,8 +27,8 @@
   <summary><b>ChangeLog<b/></summary><br/>
 
 <!--START_SECTION:waka-->
-August 31 2021
-  - Fixed Server Lag
+July 2, 2021
+  - Initial Release
   
 <!--END_SECTION:waka-->
 </details>
