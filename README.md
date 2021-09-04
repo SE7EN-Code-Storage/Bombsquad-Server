@@ -2,9 +2,6 @@
   <br><samp>
   Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make it rather than Play it!<br>
 </samp></p>
-<p align="center">
-  <a href="https://github.com/LIRIK-SPENCER/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Want+A+Full+Core+Bombsquad+Script?;Which+Should+be+Speedy?;With+no+Memory+Leaks+Caused+by+Code;Here+What+I+Have+Made&center=true&width=500&height=50"></a>
-</p>
 <div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
 <hr/>
 <h4 align="center">The Modded Server for The Game Called BOMBSQUAD with some Really Awesome UnderTheHood Features. I focused on speed and must have features rather than grafical mods (which you can easily get tons of mods on the internet). Mods are compiled against 'C-Extension' for having a speedy experience (My intension is not to hide the codes, i can even share it with anyone asked for) but their functions are easily callable to any python file (speed of C with the simplicity of Python)</h4>
@@ -14,21 +11,13 @@
   <a href="https://github.com/LIRIK-SPENCER/"><img src="https://img.shields.io/github/last-commit/LIRIK-SPENCER/Bombsquad-Server?style=flat-square?color=red&label=Last%20Updated%20"></a>
 </p>
 
+[Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/changelog.txt)
+
 <details>
   <summary><b>Notes<b/></summary><br/>
 
 <!--START_SECTION:waka-->
 - v2.5 version needs to be clean installed !
-  
-<!--END_SECTION:waka-->
-</details>
-
-<details>
-  <summary><b>ChangeLog<b/></summary><br/>
-
-<!--START_SECTION:waka-->
-July 2, 2021
-  - Initial Release
   
 <!--END_SECTION:waka-->
 </details>
