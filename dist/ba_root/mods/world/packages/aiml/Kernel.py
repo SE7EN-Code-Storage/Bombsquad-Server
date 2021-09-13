@@ -110,11 +110,7 @@ class Kernel:
             "version": self._processVersion,
         }
 
-    def bootstrap(self,
-                  brainFile=None,
-                  learnFiles=[],
-                  commands=[],
-                  chdir=None):
+    def bootstrap(self, brainFile=None, learnFiles=[], commands=[], chdir=None):
         """Prepare a Kernel object for use.
 
         If a `brainFile` argument is provided, the Kernel attempts to
@@ -143,13 +139,13 @@ class Kernel:
             # learnFiles might be a string, in which case it should be
             # turned into a single-element list.
             if isinstance(learnFiles, (str, unicode)):
-                learnFiles = (learnFiles, )
+                learnFiles = (learnFiles,)
             for file in learnFiles:
                 self.learn(file)
 
             # ditto for commands
             if isinstance(commands, (str, unicode)):
-                commands = (commands, )
+                commands = (commands,)
             for cmd in commands:
                 print(self._respond(cmd, self._globalSessionID))
 
@@ -158,8 +154,7 @@ class Kernel:
                 os.chdir(prev)
 
         if self._verboseMode:
-            print("Kernel bootstrap completed in %.2f seconds" %
-                  (time.time() - start))
+            print("Kernel bootstrap completed in %.2f seconds" % (time.time() - start))
 
     def verbose(self, isVerbose=True):
         """Enable/disable verbose output mode."""
@@ -198,19 +193,19 @@ class Kernel:
         self._brain.restore(filename)
         if self._verboseMode:
             end = time.time() - start
-            print(f"\033[01;33m(%d categories in %.2f seconds)\033[00m" %
-                  (self._brain.numTemplates(), end))
+            print(
+                f"\033[01;33m(%d categories in %.2f seconds)\033[00m"
+                % (self._brain.numTemplates(), end)
+            )
 
     def saveBrain(self, filename):
         """Dump the contents of the bot's brain to a file on disk."""
         if self._verboseMode:
-            print(f"\033[01;33mSaving brain to %s...\033[00m" % filename,
-                  end="")
+            print(f"\033[01;33mSaving brain to %s...\033[00m" % filename, end="")
         start = time.time()
         self._brain.save(filename)
         if self._verboseMode:
-            print(f"\033[01;33mdone (%.2f seconds)\033[00m" %
-                  (time.time() - start))
+            print(f"\033[01;33mdone (%.2f seconds)\033[00m" % (time.time() - start))
 
     def getPredicate(self, name, sessionID=_globalSessionID):
         """Retrieve the current value of the predicate 'name' from the
@@ -234,8 +229,7 @@ class Kernel:
         created.
 
         """
-        self._addSession(
-            sessionID)  # add the session, if it doesn't already exist.
+        self._addSession(sessionID)  # add the session, if it doesn't already exist.
         self._sessions[sessionID][name] = value
 
     def getBotPredicate(self, name):
@@ -333,9 +327,9 @@ class Kernel:
 
     def _check_contain_english(self, des_str):
         for uchar in des_str:
-            if (uchar >= "\u0041"
-                    and uchar <= "\u005a") or (uchar >= "\u0061"
-                                               and uchar <= "\u007a"):
+            if (uchar >= "\u0041" and uchar <= "\u005a") or (
+                uchar >= "\u0061" and uchar <= "\u007a"
+            ):
                 return True
             else:
                 return False
@@ -365,12 +359,23 @@ class Kernel:
             em_ext = os.path.splitext(filename)[1]
             for key, tem in handler.categories.items():
                 new_key = key
-                if (key and key[0] and key[1] and key[2] and em_ext == ".aiml"
-                        and (not self._check_contain_english(key[0]))):
+                if (
+                    key
+                    and key[0]
+                    and key[1]
+                    and key[2]
+                    and em_ext == ".aiml"
+                    and (not self._check_contain_english(key[0]))
+                ):
                     new_key = (" ".join(key[0]), key[1], key[2])
-                elif (key and key[0] and key[1] and key[2]
-                      and em_ext == ".aiml"
-                      and self._check_contain_english(key[0])):
+                elif (
+                    key
+                    and key[0]
+                    and key[1]
+                    and key[2]
+                    and em_ext == ".aiml"
+                    and self._check_contain_english(key[0])
+                ):
                     new_key = (key[0].upper(), key[1], key[2])
                 self._brain.add(new_key, tem)
             # Parsing was successful.
@@ -415,13 +420,11 @@ class Kernel:
                 response = self._respond(s, sessionID)
 
                 # add the data from this exchange to the history lists
-                outputHistory = self.getPredicate(self._outputHistory,
-                                                  sessionID)
+                outputHistory = self.getPredicate(self._outputHistory, sessionID)
                 outputHistory.append(response)
                 while len(outputHistory) > self._maxHistorySize:
                     outputHistory.pop(0)
-                self.setPredicate(self._outputHistory, outputHistory,
-                                  sessionID)
+                self.setPredicate(self._outputHistory, outputHistory, sessionID)
 
                 # append this response to the final response.
                 finalResponse += response + "  "
@@ -451,8 +454,9 @@ class Kernel:
         if len(inputStack) > self._maxRecursionDepth:
             if self._verboseMode:
                 err = (
-                    "WARNING: maximum recursion depth exceeded (input='%s')" %
-                    self._cod.enc(input_))
+                    "WARNING: maximum recursion depth exceeded (input='%s')"
+                    % self._cod.enc(input_)
+                )
                 sys.stderr.write(err)
             return ""
 
@@ -482,8 +486,7 @@ class Kernel:
         elem = self._brain.match(subbedInput, subbedThat, subbedTopic)
         if elem is None:
             if self._verboseMode:
-                err = "WARNING: No match found for input: %s\n" % self._cod.enc(
-                    input_)
+                err = "WARNING: No match found for input: %s\n" % self._cod.enc(input_)
                 sys.stderr.write(err)
         else:
             # Process the element into a response string.
@@ -515,7 +518,8 @@ class Kernel:
             # Oops -- there's no handler function for this element type!
             if self._verboseMode:
                 err = "WARNING: No handler found for <%s> element\n" % self._cod.enc(
-                    elem[0])
+                    elem[0]
+                )
                 sys.stderr.write(err)
             return ""
         return handlerFunc(elem, sessionID)
@@ -841,8 +845,7 @@ class Kernel:
         response = ""
         for e in elem[2:]:
             response += self._processElement(e, sessionID)
-        if len(elem[2:]
-               ) == 0:  # atomic <person2/> = <person2><star/></person2>
+        if len(elem[2:]) == 0:  # atomic <person2/> = <person2><star/></person2>
             response = self._processElement(["star", {}], sessionID)
         return self._subbers["person2"].sub(response)
 
@@ -1012,11 +1015,11 @@ class Kernel:
             if self._verboseMode:
                 err = (
                     'WARNING: RuntimeError while processing "system" element:\n%s\n'
-                    % self._cod.enc(msg))
+                    % self._cod.enc(msg)
+                )
                 sys.stderr.write(err)
             return "There was an error while computing my response.  Please inform my botmaster."
-        time.sleep(
-            0.01)  # I'm told this works around a potential IOError exception.
+        time.sleep(0.01)  # I'm told this works around a potential IOError exception.
         for line in out:
             response += line + "\n"
         response = " ".join(response.splitlines()).strip()

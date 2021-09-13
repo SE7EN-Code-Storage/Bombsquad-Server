@@ -2,7 +2,6 @@
 # WARNING: DO NOT CHANGE ANYTHING FROM HERE"""
 
 from enum import Enum, IntEnum
-from dataclasses import dataclass
 
 
 class WebStatus(IntEnum):
@@ -33,30 +32,3 @@ class FileType(IntEnum):
     TEXT = 1
     JSON = 2
     PYTHON = 3
-
-
-@dataclass
-class Config:
-    """Default storage class for configuration information, gets valued at runtime"""
-
-    # Chat related storage fucntionality
-    last: dict
-    mute: bool
-    muted_ids: list
-    chat_bot_ids: list
-
-    # Commands related storage functionality
-    voter: list
-    voters: list
-    default_command: dict
-    commands_plugins: dict
-
-    # Game related fucntionality
-    night_mode: bool
-    default_perk: dict
-
-    # Stats related storage fucntionality
-    default_stats: dict
-
-    # Versioning
-    latest_version: str

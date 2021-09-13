@@ -1,10 +1,10 @@
 # STANDARD MODS LIBRARY FOR EXTRA MODS
 
 
-__version__ = 4.2
+__version__ = 4.5
 __author__ = "LIRIK SPENCER"
 
-# I will update this as i get ideas from you guys !
+# I will update this as i get ideas or contributions from you guys !
 __contributors__ = {"LIRIK SPENCER": "Created Base Mods"}
 
 

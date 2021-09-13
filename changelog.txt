@@ -1,2 +1,7 @@
+[4.5]
+- Optimised code
+- Imported all methods to a file called methods.py
+- Written docs for all methods
+
 [1.0]
 - Initial release
