@@ -1,7 +1,11 @@
-[4.5]
+[4.6](14-09-2021)
+- Fixed commands
+- Changed storage objects to shiny classes
+
+[4.5](13-09-2021)
 - Optimised code
 - Imported all methods to a file called methods.py
 - Written docs for all methods
 
-[1.0]
+[1.0](30-06-2021)
 - Initial release
