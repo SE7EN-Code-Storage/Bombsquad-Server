@@ -11,13 +11,13 @@
   <a href="https://github.com/LIRIK-SPENCER/"><img src="https://img.shields.io/github/last-commit/LIRIK-SPENCER/Bombsquad-Server?style=flat-square?color=red&label=Last%20Updated%20"></a>
 </p>
 
-[Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/changelog.txt)
+[Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
 <details>
   <summary><b>Notes<b/></summary><br/>
 
 <!--START_SECTION:waka-->
-- v2.5 version needs to be clean installed !
+- v5.0 version needs to be clean installed !
   
 <!--END_SECTION:waka-->
 </details>
