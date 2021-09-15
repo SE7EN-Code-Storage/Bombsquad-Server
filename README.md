@@ -1,6 +1,6 @@
 <p align="center">
   <br><samp>
-  Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make it rather than Play it!<br>
+  Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make different stuffs!<br>
 </samp></p>
 <div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
 <hr/>
@@ -11,13 +11,13 @@
   <a href="https://github.com/LIRIK-SPENCER/"><img src="https://img.shields.io/github/last-commit/LIRIK-SPENCER/Bombsquad-Server?style=flat-square?color=red&label=Last%20Updated%20"></a>
 </p>
 
-[Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/changelog.txt)
+[Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
 <details>
   <summary><b>Notes<b/></summary><br/>
 
 <!--START_SECTION:waka-->
-- v2.5 version needs to be clean installed !
+- v5.0 version needs to be clean installed !
   
 <!--END_SECTION:waka-->
 </details>
