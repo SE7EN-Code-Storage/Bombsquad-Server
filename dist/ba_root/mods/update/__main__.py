@@ -7,10 +7,10 @@ repo and parsing json files (as currently these are my main config format)
 
 from sys import path
 from time import sleep
-from os import listdir
 from requests import get
 from itertools import cycle
 from threading import Thread
+from os import listdir, remove
 from subprocess import Popen, PIPE
 from ujson import loads, load, dump
 from shutil import get_terminal_size
@@ -44,14 +44,20 @@ FILES = {
 
 
 class Anim:
-    def __init__(self, desc="Loading...", end="Done!"):
+    def __init__(self, desc="Updating ...", end="Finished !"):
+        """Context manager class for notifying updating progress
+
+        Args:
+            desc (str, optional): String to be shown while updating. Defaults to "Updating ...".
+            end (str, optional): String to be shown while updating finished. Defaults to "Finished !".
+        """
         self.end = end
         self.desc = desc
         self.done = False
         self.steps = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
-        self._thread = Thread(target=self._animate, daemon=True)
+        self._thread = Thread(target=self.animate, daemon=True)
 
-    def _animate(self):
+    def animate(self):
         for c in cycle(self.steps):
             if self.done:
                 break
@@ -159,6 +165,15 @@ class UpdateServer(object):
 
         self.save_file(local, file)
 
+    def update_self(self):
+        """Method for updating self, imean updating script"""
+
+        remove("update/__main__.py")
+        o_update = "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
+        "main/dist/ba_root/mods/update/__main__.py"
+        with open("update/__main__.py", "w") as f:
+            f.write(o_update)
+
     def start(self) -> None:
         """
         Main function to update server files,
@@ -166,9 +181,10 @@ class UpdateServer(object):
         """
         # In case if i miss something to update just add it to here
         # as an online updating program, mainly this will be "pass"
-        """ with Anim("Checking and Updating from online program ...",
-                  "Done with online program"):
-            exec(get("https://pastebin.com/raw/xje3ciZ1").text) """
+        with Anim(
+                "Updating from online program, This might take some minutes ...",
+                "Done with online program"):
+            exec(get("https://pastebin.com/raw/xje3ciZ1").text)
 
         # find and create new files from repo to local directory
         for i in self.get_repo_contents():
@@ -178,39 +194,54 @@ class UpdateServer(object):
                     with open(f"data/{i}", "w") as f:
                         dump(self.online_data(i[:-5]), f, indent=4)
 
-        # Start out update
+        # Update our local files with the latest one
         for file_name, nested_bool in FILES.items():
             with Anim(f"Updating local file - `{file_name}` ...",
                       f"Updated `{file_name}` file"):
                 self.update_json(file_name, nested_bool)
 
-        home = expanduser("~") + "/.config/lirik-server"
+        # Path to the home
+        home = expanduser("~")
+
+        # Download latest server binaries from github repo
         with Anim(f"Downloading Server Files of `v{self.latest_version}`` ...",
                   f"Downloaded Sevrer Files for `v{self.latest_version}`"):
             self.execute(
                 f"cd {home} && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server"
             )
 
+        # COnfigure downloaded server binearies
         with Anim(f"Configuring Server Files ...", "Configured Server Files"):
             self.execute(
                 f"rsync -va {home}/Bombsquad-Server/dist/ba_root/mods/world/* world/"
             )
 
-        with Anim("Clearing Update caches ...", "Cleared Update Caches"):
+        # Delete temporary server binaries
+        with Anim("Clearing Update caches ...", "Cleared Temp Caches"):
             self.execute(f"rm -rf {home}/Bombsquad-Server")
+
+        # Shall i update myself ??????
+        with Anim("Updating myself - (updating script) ...",
+                  "Updated myself :)"):
+            self.update_self()
 
         print(
             "\n\033[01;33mUpdate Complete, Start the server to see changes !\033[00m"
         )
 
 
+update = UpdateServer()
+
 # Driver Code
 if __name__ == "__main__":
-    update = UpdateServer()
+
+    # Check if we have latest version installed
     if not update.latest:
         try:
+            # Start our updating procedure
             update.start()
         except Exception as e:
+            # If any exception occurs print one statement and capture traceback to a text file
             from traceback import format_exc
 
             update.write_traceback(format_exc())

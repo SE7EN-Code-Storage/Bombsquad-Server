@@ -1,3 +1,7 @@
+[5.1](15-09-2021)
+- Added self updating feature for updating script
+- This version needs to be clean installed
+
 [5.0](15-09-2021)
 - Restructured updating environment
 - This version needs to be clean installed
