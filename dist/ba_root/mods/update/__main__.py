@@ -99,6 +99,10 @@ class UpdateServer(object):
             raise RuntimeError(f"Process `{cmd}` exited with code {error}")
         return False if error else True
 
+    def write_traceback(self, traces):
+        with open("traceback.txt", "w") as f:
+            f.write(traces)
+
     def get_file(self, file: str) -> dict:
         """Function for getting json data
         Args:
@@ -180,7 +184,7 @@ class UpdateServer(object):
                       f"Updated `{file_name}` file"):
                 self.update_json(file_name, nested_bool)
 
-        home = expanduser("~")
+        home = expanduser("~") + "/.config/lirik-server"
         with Anim(f"Downloading Server Files of `v{self.latest_version}`` ...",
                   f"Downloaded Sevrer Files for `v{self.latest_version}`"):
             self.execute(
@@ -204,7 +208,14 @@ class UpdateServer(object):
 if __name__ == "__main__":
     update = UpdateServer()
     if not update.latest:
-        update.start()
+        try:
+            update.start()
+        except Exception as e:
+            from traceback import format_exc
+
+            update.write_traceback(format_exc())
+            print(
+                f"\n\033[91mError Occured while running update - {e}\033[00m")
     else:
         print(
             "\033[01;33m Your Script is already to the Latest Version \033[00m"
