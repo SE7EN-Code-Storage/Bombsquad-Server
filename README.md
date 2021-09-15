@@ -17,7 +17,7 @@
   <summary><b>Notes<b/></summary><br/>
 
 <!--START_SECTION:waka-->
-- v5.0 version needs to be clean installed !
+- v5.1 version needs to be clean installed !
   
 <!--END_SECTION:waka-->
 </details>
