@@ -1,7 +1,7 @@
 {
-    "votable": [
-        "end"
-    ],
+    "votable": {
+        "end": true
+    },
     "configs": {
         "help": {
             "alias": [],
