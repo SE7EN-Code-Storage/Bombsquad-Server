@@ -2,27 +2,27 @@
 """ The ultimate file for updating server's user config files and main 
 hard coded files without any hustle. This basically does, just cloning
 repo and parsing json files (as currently these are my main config format)
-# NOTE: Do not change anything from below ^_^ """
+# NOTE: Do not change anything from below ^_^ 
+# If you are using any of the code from below then please try giving credit"""
 
-import os
-import sys
-import json
-import time
-import requests
-import threading
-import urllib.request
-from subprocess import Popen, PIPE, call
-
+from sys import path
+from time import sleep
+from os import listdir
+from requests import get
+from itertools import cycle
+from threading import Thread
+from subprocess import Popen, PIPE
+from ujson import loads, load, dump
+from shutil import get_terminal_size
+from os.path import dirname, expanduser
 
 # Versioning
-VERSION = 1.2
+VERSION = 1.7
 
 # Extending python path for data folder
-sys.path.extend(
-    [os.path.dirname(__file__)[:-6], os.path.dirname(__file__)[:-6] + "data"]
-)
+path.extend([dirname(__file__)[:-6], dirname(__file__)[:-6] + "data"])
 
-LOCAL_FILES = os.listdir("data/")
+LOCAL_FILES = listdir("data/")
 
 # Dict of Paths
 PATHS = {
@@ -43,48 +43,61 @@ FILES = {
 }
 
 
+class Anim:
+    def __init__(self, desc="Loading...", end="Done!"):
+        self.end = end
+        self.desc = desc
+        self.done = False
+        self.steps = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
+        self._thread = Thread(target=self._animate, daemon=True)
+
+    def _animate(self):
+        for c in cycle(self.steps):
+            if self.done:
+                break
+            print(f"\r\033[93m{self.desc} {c}\033[0m", flush=True, end="")
+            sleep(0.1)
+
+    def __enter__(self):
+        self._thread.start()
+        return self
+
+    def __exit__(self, exc_type, exc_value, tb):
+        del exc_type, exc_value, tb
+        self.done = True
+        cols = get_terminal_size((80, 20)).columns
+        print("\r" + " " * cols, end="", flush=True)
+        print(f"\r{chr(10004)} \033[94m{self.end}\033[0m", flush=True)
+
+
 class UpdateServer(object):
     """Main Class For Server Update"""
-
     def __init__(self) -> None:
         from world import __version__
 
         self.latest = True
 
-        for i in urllib.request.urlopen(
-            f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/world/__init__.py"
-        ).readlines():
-            i = i.decode()
-            if i.startswith("__version__"):
-                self.latest_version = float(i.split()[2])
+        with Anim("Fetching latest version ...", "Fetched latest version"):
+            o_init = get(
+                "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
+                "main/dist/ba_root/mods/world/__init__.py").text.split()
+            self.latest_version = float(o_init[o_init.index("__version__") +
+                                               2])
 
         if __version__ < self.latest_version:
             self.latest = False
 
-    def execute(self, cmd: str, _call: bool = False) -> bool:
+    def execute(self, cmd: str) -> bool:
         """Function for running command line bash commands
 
         Args:
         cmd ([str]): string for command
-        _call
         """
-        if _call:
-            process = call(cmd, shell=True, stdout=PIPE, stderr=PIPE)
-            return True
-
         process = Popen(["sh", "-c", cmd], stdout=PIPE, stderr=PIPE)
-        error_code = process.wait()
-        if error_code:
-            raise RuntimeError(f"Process `{cmd}` exited with code {error_code}")
-        return False if error_code else True
-
-    def animated_loading(self, string: str) -> None:
-        """Function for simple loading animation"""
-        chars = ["⢿", "⣻", "⣽", "⣾", "⣷", "⣯", "⣟", "⡿"]
-        for char in chars:
-            sys.stdout.write(string.format(char))
-            time.sleep(0.1)
-            sys.stdout.flush()
+        error = process.wait()
+        if error:
+            raise RuntimeError(f"Process `{cmd}` exited with code {error}")
+        return False if error else True
 
     def get_file(self, file: str) -> dict:
         """Function for getting json data
@@ -94,7 +107,7 @@ class UpdateServer(object):
             [str]: data
         """
         with open(PATHS[file]) as f:
-            data = json.load(f)
+            data = load(f)
         return data
 
     def save_file(self, data: dict, file: str) -> None:
@@ -104,25 +117,21 @@ class UpdateServer(object):
             file ([str]): path to the file
         """
         with open(PATHS[file], "w") as f:
-            json.dump(data, f, indent=4)
+            dump(data, f, indent=4)
 
     def online_data(self, file: str) -> dict:
         """Function for updating json files without touching user configs
         Args:
             file ([str]): path to the offline file
         """
-        return json.loads(
-            urllib.request.urlopen(
-                f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
-            )
-            .read()
-            .decode()
-        )
+        return loads(
+            get(f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
+                ).text)
 
     def get_repo_contents(self) -> list:
         """Function for getting file names of github repo"""
 
-        response = requests.get(
+        response = get(
             f"https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/",
             headers={"Accept": "application/vnd.github.v3+json"},
         )
@@ -136,13 +145,13 @@ class UpdateServer(object):
 
         for key, value in online.items():
             if key not in local:
-                local.update({key: value})
+                local[key] = value
 
         if nested:
-            for group in online:
+            for group in online.keys():
                 for key, value in online[group].items():
                     if key not in local[group]:
-                        local[group].update({key: value})
+                        local[group][key] = value
 
         self.save_file(local, file)
 
@@ -151,50 +160,52 @@ class UpdateServer(object):
         Main function to update server files,
         updating server on the fly
         """
-
-        print(f"\033[01;33m Starting Server Update Version {VERSION}... \033[00m")
-
         # In case if i miss something to update just add it to here
         # as an online updating program, mainly this will be "pass"
-        exec(requests.get("https://pastebin.com/raw/mSbKXNV4").text)
+        """ with Anim("Checking and Updating from online program ...",
+                  "Done with online program"):
+            exec(get("https://pastebin.com/raw/xje3ciZ1").text) """
 
         # find and create new files from repo to local directory
         for i in self.get_repo_contents():
             if i not in LOCAL_FILES:
-                with open(f"data/{i}", "w") as f:
-                    json.dump(self.online_data(i[:-5]), f, indent=4)
+                with Anim(f"Downloading missing file `{i}` ...",
+                          f"Downloaded `{i}` file"):
+                    with open(f"data/{i}", "w") as f:
+                        dump(self.online_data(i[:-5]), f, indent=4)
 
         # Start out update
         for file_name, nested_bool in FILES.items():
-            self.update_json(file_name, nested_bool)
+            with Anim(f"Updating local file - `{file_name}` ...",
+                      f"Updated `{file_name}` file"):
+                self.update_json(file_name, nested_bool)
 
-        self.execute("chmod +x ./update/fetch")
-        self.execute(
-            './update/fetch --repo="https://github.com/LIRIK-SPENCER/Bombsquad-Server" --branch="main"  --source-path="/dist/ba_root/mods/world" ./new_world',
-            _call=True,
+        home = expanduser("~")
+        with Anim(f"Downloading Server Files of `v{self.latest_version}`` ...",
+                  f"Downloaded Sevrer Files for `v{self.latest_version}`"):
+            self.execute(
+                f"cd {home} && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server"
+            )
+
+        with Anim(f"Configuring Server Files ...", "Configured Server Files"):
+            self.execute(
+                f"rsync -va {home}/Bombsquad-Server/dist/ba_root/mods/world/* world/"
+            )
+
+        with Anim("Clearing Update caches ...", "Cleared Update Caches"):
+            self.execute(f"rm -rf {home}/Bombsquad-Server")
+
+        print(
+            "\n\033[01;33mUpdate Complete, Start the server to see changes !\033[00m"
         )
-        self.execute("'cp' -rf ./new_world/* world/")
 
-
-update = UpdateServer()
 
 # Driver Code
 if __name__ == "__main__":
+    update = UpdateServer()
     if not update.latest:
-        try:
-            # Start our main function with a thread, to get track of it
-            process = threading.Thread(target=update.start)
-            process.start()
-
-            # Keep our animation alive, until our main process is alive
-            while process.is_alive():
-                update.animated_loading(
-                    "\r \033[01;33m     Updating Server...  {}     \033[00m"
-                )
-            print(
-                "\n\033[01;33m Update Complete, Start the server to see changes ! \033[00m"
-            )
-        except Exception as error:
-            print("Following error occurred while updating: ", error)
+        update.start()
     else:
-        print("\033[01;33m Your Script is already to the Latest Version \033[00m")
+        print(
+            "\033[01;33m Your Script is already to the Latest Version \033[00m"
+        )

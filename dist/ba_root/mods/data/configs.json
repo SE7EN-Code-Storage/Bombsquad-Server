@@ -33,7 +33,7 @@
     },
     "game": {
         "snowfall": true,
-        "timezone": "Asia/Kolkata",
+        "timezone": "Asia\/Kolkata",
         "log_toppers": true,
         "registration": false,
         "kick_newly_created_ids": true,
