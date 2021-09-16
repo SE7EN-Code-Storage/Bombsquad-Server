@@ -61,7 +61,9 @@ class Anim:
         for c in cycle(self.steps):
             if self.done:
                 break
-            print(f"\r\033[93m{self.desc} {c}\033[0m", flush=True, end="")
+            print(f"\r\033[1m\033[93m{self.desc} {c}\033[0m",
+                  flush=True,
+                  end="")
             sleep(0.1)
 
     def __enter__(self):
@@ -73,7 +75,7 @@ class Anim:
         self.done = True
         cols = get_terminal_size((80, 20)).columns
         print("\r" + " " * cols, end="", flush=True)
-        print(f"\r{chr(10004)} \033[94m{self.end}\033[0m", flush=True)
+        print(f"\r{chr(10004)} \033[1m\033[94m{self.end}\033[0m", flush=True)
 
 
 class UpdateServer(object):
@@ -148,7 +150,7 @@ class UpdateServer(object):
         )
         req.add_header("Accept", "application/vnd.github.v3+json")
         response = loads(urlopen(req).read().decode("utf-8"))
-        return [i["name"] for i in response.json() if i["type"] != "dir"]
+        return [i["name"] for i in response if i["type"] != "dir"]
 
     def update_json(self, file: str, nested: bool = False) -> None:
         """Function for updating json files without touching user configs"""

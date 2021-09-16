@@ -35,6 +35,3 @@ True
 
 #NOTE: Do not create another instance, as Config class should be initialise at the Runtime
 """
-
-# This do the initial job of finding and loading config files
-configs.initialise()

@@ -1,3 +1,7 @@
+[5.3](16-09-2021)
+- Fixed a stupid typo
+- Migrated to `neon` library for internal c++ for better requests
+
 [5.2](16-09-2021)
 - Updated LirikApi
 - Added separate method to generate tokens for LirikAPi, check methods file
