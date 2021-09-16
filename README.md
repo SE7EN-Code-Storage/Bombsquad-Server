@@ -12,24 +12,12 @@
 
 [Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
-<details>
-  <summary><b>Notes<b/></summary><br/>
-
-<!--START_SECTION:waka-->
+## Notes
 - v5.1 version needs to be clean installed !
   
-<!--END_SECTION:waka-->
-</details>
-  
-<details>
-  <summary><b>Preinstalation</summary><br/>
-
-<!--START_SECTION:waka-->
+## Preinstalation
 - pip3
 - pthon3.8
-  
-<!--END_SECTION:waka-->
-</details>
 
 ## Some Features
 - Use '/help' in chat to get usage and use of builtin commands
