@@ -53,8 +53,7 @@ from system.stats.mystats import update_stats
 
 # Tools
 # NOTE: You can use this API for storing and accessing files and data
-from tools.api import LirikApi
-from tools.cryptor import Crypto
+from tools.api import LirikApi, generate_token
 from tools.objects import (
     Prefix,
     Airstrike,
@@ -123,7 +122,7 @@ __all__ = [
     "ChatCommandsEngine",
     "update_stats",
     "LirikApi",
-    "Crypto",
+    "generate_token",
     "Prefix",
     "Airstrike",
     "AutoAim",
