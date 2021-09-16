@@ -1,7 +1,4 @@
 <p align="center">
-  <br><samp><b>Fixed requests from server side, used `neon` as base c library for handling requests</b></br></samp>
- </p>
-<p align="center">
   <br><samp>
   Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make different stuff!<br>
 </samp></p>
