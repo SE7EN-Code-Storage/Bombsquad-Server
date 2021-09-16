@@ -20,38 +20,41 @@
 - pthon3.8
 
 ## Some Features
-- Use '/help' in chat to get usage and use of builtin commands
-- Voting system for commands with full customisability for every command
-- All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
-- New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
-- All Kinds of Filters including Profanity, Spam (I personally think Profanity is ok, cause you can't end it)
-- Exterior Written Mods so that We can Update Binaries Easily
 - Administration System with Custom Time Periods
+- Voting system for commands with full customisability
+- Use `/help` in chat to get usage and use of builtin commands
+- Exterior Written Mods so that We can Update Binaries Easily
+- New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
-- And Obviously a Prefix System
-- AND THE MAIN: SIMPLICITY
+- All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
+- All Kinds of Filters including Profanity, Spam (I personally think Profanity is ok, cause you can't end it)
+- <b>And The Main - Speed & Simplicity</b>
 
     
 ## Installation and Starting Server
 
 - For First Run
 ```bash
-sudo apt update && sudo apt install git && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
+sudo apt update
+sudo apt install git
+sudo apt install python3-pip
+git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
 ```
 - To Start Server Every Time
 ```bash
-cd Bombsquad-Server && chmod 777 bombsquad_server && cd dist && chmod 777 bombsquad_headless && cd .. && tmux new -s lirik-server
-```
-```bash
-./bombsquad_server   # Everybody know this i think ?
+cd Bombsquad-Server
+chmod 777 bombsquad_server
+cd dist && chmod 777 bombsquad_headless && cd ..
+tmux new -s lirik-server
+./bombsquad_server  # Everybody know this i think ?
 ```
 
 ## Other tmux Moderation
 ```bash
-tmux ls                                # To see all running session for tmux.
-pkill -f tmux                          # To kill all tmux sessions.
-tmux attach-session -t lirik-server    # To get attached again to our old session.
-tmux delete-session -t lirik-server    # To Delete particular session.
+tmux ls                                    # To see all running session for tmux.
+pkill -f tmux                              # To kill all tmux sessions.
+tmux attach-session -t lirik-server        # To get attached again to our old session.
+tmux delete-session -t lirik-server        # To Delete particular session.
 ```
 
 ## Updating Procedure
@@ -64,6 +67,6 @@ cd dist/ba_root/mods && python3 update
 
 ## Have A Question ?
 
-- Even can contact on Discord @LIRIK#6494
 - Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started
+- Even can contact on Discord @LIRIK#6494
 - If You Want any feature as a portable, please contact me
