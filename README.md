@@ -1,8 +1,4 @@
 <p align="center">
-  <br><samp><b>Currently Server Script is Facing Some Errors in Sending Requests, I will Sort this Soon</b></br></samp>
- </p>
-
-<p align="center">
   <br><samp>
   Hello there! I'm <b>LIRIK</b><br>I'm a Gamer who Loves to make different stuff!<br>
 </samp></p>
