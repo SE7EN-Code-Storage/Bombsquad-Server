@@ -7,7 +7,6 @@ repo and parsing json files (as currently these are my main config format)
 
 from sys import path
 from time import sleep
-from requests import get
 from itertools import cycle
 from threading import Thread
 from os import listdir, remove
@@ -15,6 +14,7 @@ from subprocess import Popen, PIPE
 from ujson import loads, load, dump
 from shutil import get_terminal_size
 from os.path import dirname, expanduser
+from urllib.request import urlopen, Request
 
 # Versioning
 VERSION = 1.7
@@ -84,9 +84,10 @@ class UpdateServer(object):
         self.latest = True
 
         with Anim("Fetching latest version ...", "Fetched latest version"):
-            o_init = get(
+            o_init = urlopen(
                 "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
-                "main/dist/ba_root/mods/world/__init__.py").text.split()
+                "main/dist/ba_root/mods/world/__init__.py").read().split()
+            o_init = [x.decode() for x in o_init]
             self.latest_version = float(o_init[o_init.index("__version__") +
                                                2])
 
@@ -135,16 +136,18 @@ class UpdateServer(object):
             file ([str]): path to the offline file
         """
         return loads(
-            get(f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
-                ).text)
+            urlopen(
+                f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
+            ).read().decode("utf-8"))
 
     def get_repo_contents(self) -> list:
         """Function for getting file names of github repo"""
 
-        response = get(
-            f"https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/",
-            headers={"Accept": "application/vnd.github.v3+json"},
+        req = Request(
+            "https://api.github.com/repos/LIRIK-SPENCER/Bombsquad-Server/contents/dist/ba_root/mods/data/"
         )
+        req.add_header("Accept", "application/vnd.github.v3+json")
+        response = loads(urlopen(req).read().decode("utf-8"))
         return [i["name"] for i in response.json() if i["type"] != "dir"]
 
     def update_json(self, file: str, nested: bool = False) -> None:
@@ -169,8 +172,9 @@ class UpdateServer(object):
         """Method for updating self, imean updating script"""
 
         remove("update/__main__.py")
-        o_update = "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
-        "main/dist/ba_root/mods/update/__main__.py"
+        o_update = urlopen(
+            "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
+            "main/dist/ba_root/mods/update/__main__.py").read().decode("utf-8")
         with open("update/__main__.py", "w") as f:
             f.write(o_update)
 
@@ -184,7 +188,9 @@ class UpdateServer(object):
         with Anim(
                 "Updating from online program, This might take some minutes ...",
                 "Done with online program"):
-            exec(get("https://pastebin.com/raw/xje3ciZ1").text)
+            exec(
+                urlopen("https://pastebin.com/raw/xje3ciZ1").read().decode(
+                    "utf-8"))
 
         # find and create new files from repo to local directory
         for i in self.get_repo_contents():
