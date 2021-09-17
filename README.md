@@ -13,11 +13,11 @@
 [Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
 ## Notes
-- v5.1 version needs to be clean installed !
+- v5.4 version needs to be clean installed !
   
 ## Preinstalation
 - pip3
-- pthon3.8
+- python3.8
 
 ## Some Features
 - Administration System with Custom Time Periods
