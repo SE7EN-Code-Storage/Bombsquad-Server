@@ -12,6 +12,8 @@
 
 [Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
+[Latest Version](https://github.com/LIRIK-SPENCER/Bombsquad-Server/archive/refs/heads/main.zip)
+
 ## Notes
 - v5.4 version needs to be clean installed !
   
@@ -32,15 +34,14 @@
 
     
 ## Installation and Starting Server
-
-- For First Run
+- **For First Run**
 ```bash
 sudo apt update
 sudo apt install git
 sudo apt install python3-pip
 git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
 ```
-- To Start Server Every Time
+- **To Start Server Every Time**
 ```bash
 cd Bombsquad-Server
 chmod 777 bombsquad_server
@@ -58,15 +59,28 @@ tmux delete-session -t lirik-server        # To Delete particular session.
 ```
 
 ## Updating Procedure
-
-Simply run the command in terminal while in the Scripts directory
+- **Simply run the command in terminal while in the Scripts directory**
   
 ```bash
 cd dist/ba_root/mods && python3 update
 ```
 
-## Have A Question ?
+## Build Map
+- **I will update this as get Ideas**
 
+- [ ] Rebase Requests Handling
+- [ ] Fix LirikAPI Request Time
+- [x] External Written Mods - **(v2.4)**
+- [x] Self Updating Service - **(v5.3)**
+- [x] Autorole service based on Ranks - **(v4.3)**
+- [x] Auto Backup Service for Json files - **(v1.6)**
+- [x] Plugin System for Commands and Perks - **(v2.2)**
+- [x] Rebase I/O Workings as a Avoidable Element - **(v5.1)**
+- [ ] Server Controller/Manager for controlling Multiple Servers
+- [x] Release a Final Build (Release build with minimal bugs) - **(v5.4)**
+- [x] Merge local owners(from roles.json) with default admins(from configs.yaml) - **(v3.9)**
+
+## Have A Question ?
 - Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started
 - Even can contact on Discord @LIRIK#6494
 - If You Want any feature as a portable, please contact me
