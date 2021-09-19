@@ -72,6 +72,7 @@ cd dist/ba_root/mods && python3 update
 - [ ] Fix LirikAPI Request Time
 - [x] External Written Mods - **(v2.4)**
 - [x] Self Updating Service - **(v5.3)**
+- [x] Plugin System for Powerups - **(5.5)**
 - [x] Autorole service based on Ranks - **(v4.3)**
 - [x] Auto Backup Service for Json files - **(v1.6)**
 - [x] Plugin System for Commands and Perks - **(v2.2)**

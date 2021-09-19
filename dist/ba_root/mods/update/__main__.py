@@ -218,10 +218,10 @@ class UpdateServer(object):
                 f"cd {home} && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server"
             )
 
-        # COnfigure downloaded server binearies
+        # Configure downloaded server binearies
         with Anim(f"Configuring Server Files ...", "Configured Server Files"):
             self.execute(
-                f"rsync -va {home}/Bombsquad-Server/dist/ba_root/mods/world/* world/"
+                f"rm -rf world/* && cp -r {home}/Bombsquad-Server/dist/ba_root/mods/world/* world"
             )
 
         # Delete temporary server binaries
