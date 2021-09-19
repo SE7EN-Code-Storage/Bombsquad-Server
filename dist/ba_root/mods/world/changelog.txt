@@ -1,3 +1,9 @@
+[5.5](19-09-2021)
+- Config class Optimised
+- Added Powerups (Thanks to Bombdash)
+- Fixed a stupid impotation mistake
+- Introduced Plugin system for powerups
+
 [5.4](17-09-2021)
 - Improved startup
 - Fixed a typo in README

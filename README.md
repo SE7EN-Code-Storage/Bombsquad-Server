@@ -15,7 +15,7 @@
 [Latest Version](https://github.com/LIRIK-SPENCER/Bombsquad-Server/archive/refs/heads/main.zip)
 
 ## Notes
-- v5.4 version needs to be clean installed !
+- v5.5 version must need to be clean installed !
   
 ## Preinstalation
 - pip3
