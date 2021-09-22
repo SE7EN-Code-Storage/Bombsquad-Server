@@ -1,6 +1,6 @@
 <p align="center">
   <br><samp>
-  <b>Private Version</b><br>I'm a Gamer who Loves to make different stuff!<br>
+  <b>Public Version</b><br>I'm a Gamer who Loves to make different stuff!<br>
 </samp></p>
 <div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
 <hr/>
