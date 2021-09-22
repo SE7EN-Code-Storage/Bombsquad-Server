@@ -36,6 +36,7 @@ from core.internal import (
     get_parent_path,
     get_file,
     save_file,
+    decode_name,
 )
 from core.netool import net
 from core.register import register_commands, register_perks
@@ -48,8 +49,8 @@ from system.chat.spam import check_spam
 # system.commands
 from system.commands.engine import ChatCommandsEngine
 
-# system.stats
-from system.stats.mystats import update_stats
+# core.mystats
+from core.mystats import update_stats
 
 # Tools
 # NOTE: You can use this API for storing and accessing files and data
@@ -119,6 +120,7 @@ __all__ = [
     "chat_functions",
     "Punishment",
     "check_spam",
+    "decode_name",
     "ChatCommandsEngine",
     "update_stats",
     "LirikApi",

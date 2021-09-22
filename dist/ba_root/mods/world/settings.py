@@ -1,9 +1,6 @@
 from tools.configclass import configs
 
-
 __all__ = ["configs"]
-
-
 """
 # The Main Thing ...
 >>> from settings import configs
@@ -33,5 +30,5 @@ False
 >>> configs.new_section.status
 True
 
-#NOTE: Do not create another instance, as Config class should be initialise at the Runtime
+NOTE: Do not create another instance, as Config class should be initialise at the Runtime
 """

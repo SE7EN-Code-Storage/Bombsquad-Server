@@ -14,8 +14,10 @@
 
 [Latest Version](https://github.com/LIRIK-SPENCER/Bombsquad-Server/archive/refs/heads/main.zip)
 
+[Configs Tweaks Info](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/CONFIGS_INFO.md)
+
 ## Notes
-- v5.5 version must need to be clean installed !
+- v5.6 version must need to be clean installed !
   
 ## Preinstalation
 - pip3

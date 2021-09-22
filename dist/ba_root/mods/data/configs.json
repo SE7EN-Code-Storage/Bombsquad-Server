@@ -31,13 +31,26 @@
             "roles"
         ]
     },
+    "spaz": {
+        "glow": true,
+        "hidden_tags": [
+            "role_tag",
+            "rank_tag"
+        ]
+    },
+    "entry": {
+        "universal_ban": true,
+        "whitelist_mode": false,
+        "check_bot_spam": true,
+        "kick_lobby_idles": false,
+        "kick_lobby_idle_time": 6,
+        "kick_newly_created_ids": true
+    },
     "game": {
         "snowfall": true,
-        "timezone": "Asia\/Kolkata",
         "log_toppers": true,
         "registration": false,
-        "kick_newly_created_ids": true,
-        "include_roles": [
+        "merge_roles": [
             "moderators",
             "owners",
             "admins"

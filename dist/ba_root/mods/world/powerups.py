@@ -1,10 +1,3 @@
-"""
-Credits For All Powerups Mentioned here goes to `BombDash`
-I do not own any copyrights either ! :)
-BombDash : https://github.com/BombDash/BombDash-server
-"""
-
-
 from random import random, choice, randint
 
 import ba

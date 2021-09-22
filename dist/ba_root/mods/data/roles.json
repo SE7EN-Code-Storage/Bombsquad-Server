@@ -1,5 +1,7 @@
 {
-    "owners": {},
+    "owners": {
+        "account-id": "permanent"
+    },
     "moderators": {},
     "admins": {},
     "elites": {},

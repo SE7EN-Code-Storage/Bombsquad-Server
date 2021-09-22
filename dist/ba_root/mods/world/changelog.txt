@@ -1,3 +1,11 @@
+[5.6](22-09-2021)
+- Added a command `universal`
+- Added powerfull whitelisting service
+- Added lobby afk service with time customisations
+- Added bot spam measure at internal root (to gain real speed)
+- Written configs information at /ba_root/mods/world/CONFIGS_INFO.md
+- Added universal ban feature (Like once you spam with a bot then you will be targeted as universal ban)
+
 [5.5](19-09-2021)
 - Config class Optimised
 - Added Powerups (Thanks to Bombdash)

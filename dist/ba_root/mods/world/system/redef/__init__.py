@@ -1,6 +1,8 @@
 # FOLDER FOR SYSTEM DEFAULT MODIFICATIONS
 
 from . import (
+    app,
+    activity,
     powerups,
     activitytypes,
     gameactivity,
@@ -13,6 +15,8 @@ from . import (
 )
 
 del (
+    app,
+    activity,
     powerups,
     activitytypes,
     gameactivity,

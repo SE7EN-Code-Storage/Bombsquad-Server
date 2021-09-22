@@ -350,8 +350,6 @@ class CompanionCube(ba.Actor):
         self.regen_timer = None
         self.phrase_text_node = None
 
-        from . import core
-
         self.phrases = locale("objects.companion_cube_text")
         self.phrases_times = (10.0, 12.5, 15.0, 17.5, 20.0, 22.5, 25.0, 27.5, 30.0)
 

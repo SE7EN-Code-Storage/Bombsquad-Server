@@ -61,9 +61,7 @@ class Anim:
         for c in cycle(self.steps):
             if self.done:
                 break
-            print(f"\r\033[1m\033[93m{self.desc} {c}\033[0m",
-                  flush=True,
-                  end="")
+            print(f"\r\033[1m\033[93m{self.desc} {c}\033[0m", flush=True, end="")
             sleep(0.1)
 
     def __enter__(self):
@@ -80,18 +78,23 @@ class Anim:
 
 class UpdateServer(object):
     """Main Class For Server Update"""
+
     def __init__(self) -> None:
         from world import __version__
 
         self.latest = True
 
         with Anim("Fetching latest version ...", "Fetched latest version"):
-            o_init = urlopen(
-                "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
-                "main/dist/ba_root/mods/world/__init__.py").read().split()
+            o_init = (
+                urlopen(
+                    "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
+                    "main/dist/ba_root/mods/world/__init__.py"
+                )
+                .read()
+                .split()
+            )
             o_init = [x.decode() for x in o_init]
-            self.latest_version = float(o_init[o_init.index("__version__") +
-                                               2])
+            self.latest_version = float(o_init[o_init.index("__version__") + 2])
 
         if __version__ < self.latest_version:
             self.latest = False
@@ -130,7 +133,7 @@ class UpdateServer(object):
             file ([str]): path to the file
         """
         with open(PATHS[file], "w") as f:
-            dump(data, f, indent=4)
+            dump(data, f, indent=4, escape_forward_slashes=False)
 
     def online_data(self, file: str) -> dict:
         """Function for updating json files without touching user configs
@@ -140,7 +143,10 @@ class UpdateServer(object):
         return loads(
             urlopen(
                 f"https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/main/dist/ba_root/mods/data/{file}.json"
-            ).read().decode("utf-8"))
+            )
+            .read()
+            .decode("utf-8")
+        )
 
     def get_repo_contents(self) -> list:
         """Function for getting file names of github repo"""
@@ -174,9 +180,14 @@ class UpdateServer(object):
         """Method for updating self, imean updating script"""
 
         remove("update/__main__.py")
-        o_update = urlopen(
-            "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
-            "main/dist/ba_root/mods/update/__main__.py").read().decode("utf-8")
+        o_update = (
+            urlopen(
+                "https://raw.githubusercontent.com/LIRIK-SPENCER/Bombsquad-Server/"
+                "main/dist/ba_root/mods/update/__main__.py"
+            )
+            .read()
+            .decode("utf-8")
+        )
         with open("update/__main__.py", "w") as f:
             f.write(o_update)
 
@@ -188,32 +199,41 @@ class UpdateServer(object):
         # In case if i miss something to update just add it to here
         # as an online updating program, mainly this will be "pass"
         with Anim(
-                "Updating from online program, This might take some minutes ...",
-                "Done with online program"):
-            exec(
-                urlopen("https://pastebin.com/raw/xje3ciZ1").read().decode(
-                    "utf-8"))
+            "Updating from online program, This might take some minutes ...",
+            "Done with online program",
+        ):
+            exec(urlopen("https://pastebin.com/raw/xje3ciZ1").read().decode("utf-8"))
 
         # find and create new files from repo to local directory
         for i in self.get_repo_contents():
             if i not in LOCAL_FILES:
-                with Anim(f"Downloading missing file `{i}` ...",
-                          f"Downloaded `{i}` file"):
+                with Anim(
+                    f"Downloading missing file `{i}` ...", f"Downloaded `{i}` file"
+                ):
                     with open(f"data/{i}", "w") as f:
-                        dump(self.online_data(i[:-5]), f, indent=4)
+                        dump(
+                            self.online_data(i[:-5]),
+                            f,
+                            indent=4,
+                            escape_forward_slashes=False,
+                        )
 
         # Update our local files with the latest one
         for file_name, nested_bool in FILES.items():
-            with Anim(f"Updating local file - `{file_name}` ...",
-                      f"Updated `{file_name}` file"):
+            with Anim(
+                f"Updating local file - `{file_name}` ...",
+                f"Updated `{file_name}` file",
+            ):
                 self.update_json(file_name, nested_bool)
 
         # Path to the home
         home = expanduser("~")
 
         # Download latest server binaries from github repo
-        with Anim(f"Downloading Server Files of `v{self.latest_version}`` ...",
-                  f"Downloaded Sevrer Files for `v{self.latest_version}`"):
+        with Anim(
+            f"Downloading Server Files of `v{self.latest_version}`` ...",
+            f"Downloaded Sevrer Files for `v{self.latest_version}`",
+        ):
             self.execute(
                 f"cd {home} && git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server"
             )
@@ -221,7 +241,7 @@ class UpdateServer(object):
         # Configure downloaded server binearies
         with Anim(f"Configuring Server Files ...", "Configured Server Files"):
             self.execute(
-                f"rm -rf world/* && cp -r {home}/Bombsquad-Server/dist/ba_root/mods/world/* world"
+                f"rm -rf world && cp {home}/Bombsquad-Server/dist/ba_root/mods/world ."
             )
 
         # Delete temporary server binaries
@@ -229,13 +249,10 @@ class UpdateServer(object):
             self.execute(f"rm -rf {home}/Bombsquad-Server")
 
         # Shall i update myself ??????
-        with Anim("Updating myself - (updating script) ...",
-                  "Updated myself :)"):
+        with Anim("Updating myself - (updating script) ...", "Updated myself :)"):
             self.update_self()
 
-        print(
-            "\n\033[01;33mUpdate Complete, Start the server to see changes !\033[00m"
-        )
+        print("\n\033[01;33mUpdate Complete, Start the server to see changes !\033[00m")
 
 
 update = UpdateServer()
@@ -253,9 +270,6 @@ if __name__ == "__main__":
             from traceback import format_exc
 
             update.write_traceback(format_exc())
-            print(
-                f"\n\033[91mError Occured while running update - {e}\033[00m")
+            print(f"\n\033[91mError Occured while running update - {e}\033[00m")
     else:
-        print(
-            "\033[01;33m Your Script is already to the Latest Version \033[00m"
-        )
+        print("\033[01;33m Your Script is already to the Latest Version \033[00m")
