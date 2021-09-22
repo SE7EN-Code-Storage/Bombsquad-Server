@@ -24,6 +24,7 @@
 - python3.8
 
 ## Some Features
+- Registration System for Powerups
 - Administration System with Custom Time Periods
 - Voting system for commands with full customisability
 - Use `/help` in chat to get usage and use of builtin commands
