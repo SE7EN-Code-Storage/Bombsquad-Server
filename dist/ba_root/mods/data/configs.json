@@ -33,10 +33,7 @@
     },
     "spaz": {
         "glow": true,
-        "hidden_tags": [
-            "role_tag",
-            "rank_tag"
-        ]
+        "hidden_tags": []
     },
     "entry": {
         "universal_ban": true,
