@@ -1,6 +1,6 @@
 <p align="center">
   <br><samp>
-  <b>Public Version</b><br>I'm a Gamer who Loves to make different stuff!<br>
+  <b>Hi I'm LIRIK SPENCER, All the Way From Sydney !</b><br>I'm a Gamer who Loves to make different stuff!<br>
 </samp></p>
 <div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
 <hr/>
@@ -17,7 +17,7 @@
 [Download Latest Version](https://github.com/LIRIK-SPENCER/Bombsquad-Server/archive/main/heads/main.zip)
 
 ## Notes
-- v5.6 version must need to be clean installed !
+- v5.7 version must need to be clean installed !
   
 ## Preinstalation
 - pip3
@@ -71,22 +71,6 @@ tmux delete-session -t lirik-server        # To Delete particular session.
 ```bash
 cd dist/ba_root/mods && python3 update
 ```
-
-## Build Map
-- **I will update this as get Ideas**
-
-- [ ] Rebase Requests Handling
-- [ ] Fix LirikAPI Request Time
-- [x] External Written Mods - **(v2.4)**
-- [x] Self Updating Service - **(v5.3)**
-- [x] Plugin System for Powerups - **(5.5)**
-- [x] Autorole service based on Ranks - **(v4.3)**
-- [x] Auto Backup Service for Json files - **(v1.6)**
-- [x] Plugin System for Commands and Perks - **(v2.2)**
-- [x] Rebase I/O Workings as a Avoidable Element - **(v5.1)**
-- [ ] Server Controller/Manager for controlling Multiple Servers
-- [x] Release a Final Build (Release build with minimal bugs) - **(v5.4)**
-- [x] Merge local owners(from roles.json) with default admins(from configs.yaml) - **(v3.9)**
 
 ## Have A Question ?
 - Join [Discussions](https://github.com/LIRIK-SPENCER/Bombsquad-Server/discussions) to get Started
