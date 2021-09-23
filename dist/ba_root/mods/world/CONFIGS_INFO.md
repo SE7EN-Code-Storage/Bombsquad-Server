@@ -50,8 +50,7 @@
 | Config Name            | Config Info                                                                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | universal_ban          | enables a universal ban method like whole bs servers can serve a universal ban list to ban player/bot ids. Use `/help universal` to know more |
-| whitelist_mode         | Enables the most powerful whitelisting with live time periods                                                                                 |
-| check_bot_spam         | Servers your server safely against bot serve spams                                                                                            |
+| whitelist_mode         | Enables the most powerful whitelisting with live time periods                                                                                 |                                                                                    |
 | kick_lobby_idles       | Kicks player if he/she is in lobby for desired number of time                                                                                 |
 | kick_lobby_idle_time   | Time(secs) for lobby afk player to get a kick                                                                                                 |
 | kick_newly_created_ids | Kicks [player if they have newly created ids, better for preventing bot spams                                                                 |
