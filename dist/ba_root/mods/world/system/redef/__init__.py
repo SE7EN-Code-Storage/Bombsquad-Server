@@ -6,10 +6,10 @@ from . import (
     powerups,
     activitytypes,
     gameactivity,
+    games,
     hooks,
     session,
     internal,
-    mapdata,
     spaz,
     mode,
 )
@@ -20,10 +20,10 @@ del (
     powerups,
     activitytypes,
     gameactivity,
+    games,
     hooks,
     session,
     internal,
-    mapdata,
     spaz,
     mode,
 )

@@ -1,3 +1,13 @@
+[5.7](23-09-2021)
+- Handled all internal mods exceptions
+- Some more fixes in lobby spamming and filters
+- Fixed `resetcodes` command
+- Finally fixed internal requests handling
+- Internal traceback logger, it helps me to make script bugs free
+- Added support for multiple backup files with multiple time periods
+- I am not remebering now !
+
+
 [5.6](22-09-2021)
 - Added a command `universal`
 - Added powerfull whitelisting service
