@@ -33,7 +33,6 @@
 - Voting system for commands with full customisability
 - Use `/help` in chat to get usage and use of builtin commands
 - Exterior Written Mods so that We can Update Binaries Easily
-- New Chat and Perks System To Get Started with visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - Custom perks and commands registration with ease visit [here](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Register-File) for more info
 - All Config Files and Stats can Auto Backup to the Repo with your repective IP folder - [This Repo](https://github.com/LIRIK-SPENCER/data-collection)
 - All Kinds of Filters including Profanity, Spam (I personally think Profanity is ok, cause you can't end it)
