@@ -1,6 +1,6 @@
 <p align="center">
   <br><samp>
-  <b>Hi I'm LIRIK SPENCER, All the Way From Sydney !</b><br>I'm a Gamer who Loves to make different stuff!<br>
+  <b>PUBLIC RELEASE</b><br>I'm a Gamer who Loves to make different stuff!<br>
 </samp></p>
 <div align="center"> 𝚂𝚑𝚘𝚠 s𝚘𝚖𝚎 ❤️ 𝚋𝚢 S𝚝𝚊𝚛𝚛𝚒𝚗𝚐 this Repository! </div>
 <hr/>
@@ -12,12 +12,14 @@
 
 [Changelog](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/changelog.txt)
 
-[Configs Tweaks Info](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/CONFIGS_INFO.md)
+[Preventing Spam](https://github.com/LIRIK-SPENCER/Bombsquad-Server/wiki/Lockdown-Mode)
+
+[Configs Tweaks Info](https://github.com/LIRIK-SPENCER/Bombsquad-Server/blob/main/dist/ba_root/mods/world/CONFIGS.md)
 
 [Download Latest Version](https://github.com/LIRIK-SPENCER/Bombsquad-Server/archive/main/heads/main.zip)
 
 ## Notes
-- v5.7 version must need to be clean installed !
+- v6.0 version must need to be clean installed !
   
 ## Preinstalation
 - pip3
@@ -25,7 +27,9 @@
 
 ## Some Features
 - Bot spam preventions
+- Added togle for flymode
 - Powerful whitelisting service
+- Added more toggles in map text
 - Registration System for Powerups
 - Universal ban service to prevent bot spam
 - Lobby afk kickers with time customisability
@@ -43,8 +47,7 @@
 - **For First Run**
 ```bash
 sudo apt update
-sudo apt install git
-sudo apt install python3-pip
+sudo apt install git python3-pip
 git clone https://github.com/LIRIK-SPENCER/Bombsquad-Server
 ```
 - **To Start Server Every Time**
