@@ -242,7 +242,7 @@ class UpdateServer(object):
         # Configure downloaded server binearies
         with Anim(f"Configuring Server Files ...", "Configured Server Files"):
             self.execute(
-                f"rm -rf world && cp {home}/Bombsquad-Server/dist/ba_root/mods/world ."
+                f"rm -rf world/* && cp -r {home}/Bombsquad-Server/dist/ba_root/mods/world/* world"
             )
 
         # Delete temporary server binaries
