@@ -1,7 +1,8 @@
 # STANDARD MODS LIBRARY FOR EXTRA MODS
 
 
-__version__ = 5.7
+__version__ = 6.0
+__server__ = "public"
 __author__ = "LIRIK SPENCER"
 
 # I will update this as i get ideas or contributions from you guys !

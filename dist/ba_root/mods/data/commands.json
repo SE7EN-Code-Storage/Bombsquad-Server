@@ -298,7 +298,7 @@
             ],
             "role": "owners",
             "arguments": {
-                "min": 1,
+                "min": 0,
                 "integer": null
             }
         },

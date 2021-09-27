@@ -1,3 +1,12 @@
+[6.0](27-09-2021)
+- Released Private Server Build with Beta Tag
+- Fixed 2 typos in commands
+- Added support for party queue Entries (See README for better details)
+- Added toggles to enable and disable flymode
+- Added togles for afk kicker service and time period
+- Added extra toggles in map text
+- Internal code cleanup
+
 [5.7](23-09-2021)
 - Handled all internal mods exceptions
 - Some more fixes in lobby spamming and filters

@@ -1,5 +1,6 @@
 {
     "chat": {
+        "bot": true,
         "spam_time": 1,
         "chat_log": true,
         "beg_check": true,
@@ -35,12 +36,17 @@
         "glow": true,
         "hidden_tags": []
     },
-    "entry": {
+    "kick_idles": {
+        "in_lobby": false,
+        "in_lobby_time": 5,
+        "in_game": false,
+        "in_game_time": 60
+    },
+    "server": {
+        "queue_id": "",
+        "lockdown_mode": false,
         "universal_ban": true,
         "whitelist_mode": false,
-        "check_bot_spam": true,
-        "kick_lobby_idles": false,
-        "kick_lobby_idle_time": 6,
         "kick_newly_created_ids": true
     },
     "game": {
@@ -51,10 +57,14 @@
             "moderators",
             "owners",
             "admins"
-        ],
-        "texts": [
+        ]
+    },
+    "maptext": {
+        "main": [
             "Heartily Welcome To the Server",
             "I hope for your good stay here"
-        ]
+        ],
+        "bottom_left": "Owner: Server Owner\nEven To Next Line",
+        "bottom_right": "Other Information Here"
     }
 }

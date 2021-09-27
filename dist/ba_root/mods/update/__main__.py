@@ -9,7 +9,7 @@ from sys import path
 from time import sleep
 from itertools import cycle
 from threading import Thread
-from os import listdir, remove
+from os import listdir, remove, getcwd
 from subprocess import Popen, PIPE
 from ujson import loads, load, dump
 from shutil import get_terminal_size
@@ -17,6 +17,7 @@ from os.path import dirname, expanduser
 from urllib.request import urlopen, Request
 
 # Versioning
+SERVER = "public"
 VERSION = 1.7
 
 # Extending python path for data folder
